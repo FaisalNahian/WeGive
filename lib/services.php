@@ -4,6 +4,8 @@ require_once APPLICATION_PATH.'php-activerecord/ActiveRecord.php';
 
 class Services
 {
+    protected $session;
+    
     function __construct()
     {                
         ActiveRecord\Config::initialize(function($cfg) {

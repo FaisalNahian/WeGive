@@ -19,6 +19,16 @@ class CharityController extends Controller
         );
     }
     
+    function show($id)
+    {
+        $c = Charity::find_by_id($id);
+        if (!$c) throw new PageNotFoundException();
+        
+        return array(
+            'charity'=>$c,
+        );
+    }
+    
     function listing()
     {
         return array(

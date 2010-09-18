@@ -1,0 +1,14 @@
+<h1 tal:content="user/screen_name">User name</h1>
+
+<img src="${user/profile_image_url}" tal:condition="user/profile_image_url" alt=""/>
+
+<div id="followers" tal:condition="user/followers_available">
+<h2>Followers</h2>
+
+<ul>
+    <li tal:repeat="follower user/get_followers">
+        <a href="/user/show/${follower/id}" tal:content="follower/screen_name"/>
+    </li>
+</ul>
+</div>
+

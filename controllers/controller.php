@@ -1,6 +1,7 @@
 <?php
 
 class PageNotFoundException extends Exception {}
+class LoginException extends Exception {}
 
 class Controller
 {    
@@ -64,5 +65,38 @@ class Controller
         if (!isset($result['controller_name'])) $result['controller_name'] = substr(get_class($this),0,-10);
 
         return $result;
+    }
+
+
+    ///////////////// user
+    
+    protected function login_user(User $user)
+    {        
+        $this->session()->user_id = $user->id;        
+    }
+    
+    protected function logged_in_user()
+    {
+        $id = $this->session()->user_id;
+        $id=4;//if (!$id) throw new Exception("no id in session");
+        
+        $user = User::find_by_id($id);
+        if (!$user) throw new LoginException("Can't find user");     
+        
+        return $user;       
+    }
+    
+    //////////
+    
+    protected function return_to()
+    {
+        return array(
+            'redirect'=> $this->session()->get('return_to','/'),
+        );        
+    }
+    
+    protected function set_return_to($uri)
+    {
+        $this->session()->return_to = $uri;
     }
 }

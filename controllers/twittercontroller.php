@@ -4,8 +4,9 @@ class TwitterController extends Controller
 {
     function login()
     {
+        $t = new Twitter();
         return array(
-            'redirect'=>Twitter::create()->getAuthenticateUrl(),
+            'redirect'=>$t->getAuthenticateUrl(),
         );
     }
     
@@ -20,39 +21,34 @@ class TwitterController extends Controller
         return $this->login_with_oauth($token->oauth_token, $token->oauth_token_secret);              
     }
     
-    function login_with_oauth($token=NULL,$secret=NULL)
+    protected function login_with_oauth($token,$secret)
     {
         $twitter = new Twitter();
-        $twitter->setToken("69655255-qD8uFEbkSclFVOkUaSE6IkluD3YbGlcxEJqwQTzOq", "nKnFwDDeI6lxUQZIONosSPWXbzZjAPaDfuKrMROdbo");
+        $twitter->setToken($token, $secret);
         
         $creds = $twitter->get('/account/verify_credentials.json');
         
-        $user = User::find_by_twitter_id($creds->id);
-        if (!$user) {
-            $user = new User();
-        }
+        $user = $twitter->user_from_response($creds);
         
-        $user->twitter_id = $creds->id;
-        $user->screen_name = $creds->screen_name;
-        $user->profile_image_url = $creds->profile_image_url;
+        $user->twitter_oauth_token = $token;
+        $user->twitter_oauth_token_secret = $secret;
         
         $user->save();
+        
+        $this->login_user($user);  
+        
+        $twitter->update_friends_if_needed($user);
+        
+        return $this->return_to();
     }
+        
     
-    // protected function update_profile(Twitter $twitter)
-    // {
-    //     
-    //     $u->save();
-    //     
-    // }
-    
-    public function test()
+    function test()
     {
-        $twitter = new Twitter();        
-        $twitter->setToken($_COOKIE['oauth_token'], $_COOKIE['oauth_token_secret']);  
-                
-        $creds = $twitter->get('/account/verify_credentials.json');
-
-        die('done');
+        $user = $this->logged_in_user();
+        
+        $f = User::find_by_id(12);
+        
+        $user->add_follower($f);
     }
 }

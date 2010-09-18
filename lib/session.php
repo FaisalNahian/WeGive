@@ -12,9 +12,9 @@ class Session
         return $this->get($arg);
     }
     
-    function __get($key, $default = NULL)
+    function get($key, $default = NULL)
     {
-        if (isset($_SESSION[$key])) return $default;
+        if (!isset($_SESSION[$key])) return $default;
         return $_SESSION[$key];
     }
     
