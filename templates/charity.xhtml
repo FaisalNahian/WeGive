@@ -1,0 +1,9 @@
+<tal:block metal:define-macro="charity">
+
+<div class="charity">
+    <h2 tal:content="charity/name">Charity name</h2>
+    <img src="${charity/image_url}" tal:condition="charity/image_url" alt=""/>
+    <p tal:content="charity/description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+
+</tal:block>

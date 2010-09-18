@@ -1,0 +1,8 @@
+<h1>Charities</h1>
+
+<ul>
+    <li tal:repeat="charity charities">
+        <tal:block metal:use-macro="charity.xhtml/charity"/>
+    </li>
+</ul>
+        

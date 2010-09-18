@@ -1,3 +1,3 @@
 hello world
 
-$meh
+<?php echo print_r($users);

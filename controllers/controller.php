@@ -22,7 +22,7 @@ class Controller
     
     public static function run(Services $services = NULL, $uri)
     {
-        if (preg_match('!^/([a-z]+)(?:/([a-z]*)(?:/([^?]+))?)?/?(?:\?.*)?!', $uri, $m)) {
+        if (preg_match('!^/([a-z_]+)(?:/([a-z_]*)(?:/([^?]+))?)?/?(?:\?.*)?$!', $uri, $m)) {
             $controller_name = $m[1];
             $method_name = !empty($m[2]) ? $m[2] : 'index';
             $arguments = isset($m[3]) ? explode('/',$m[3]) : array();

@@ -1,8 +1,11 @@
 <?php
 
+require_once "phptal/PHPTAL.php";
+require_once "phptal/PHPTAL/FileSourceResolver.php";
+
 class Template
 {
-    private function outputHTTP(array $result)
+    private static function outputHTTP(array $result)
     {
         if (isset($result['redirect'])) {
             // FIXME: sanitise
@@ -11,23 +14,38 @@ class Template
         }
     }
     
-    function output(array $result)
+    public static function output(array $result)
     {
-        $this->outputHTTP($result);
+        self::outputHTTP($result);
                 
         if (!isset($result['template'])) {
             throw new Exception("No template?");
         }
         
-        $path = 'templates/'.strtolower($result['controller_name']).'_'.$result['template'].'.php';
-        
-        if (!file_exists($path)) {
-            throw new Exception("No template $path");
+        $base_path = 'templates/'.strtolower($result['controller_name']).'_'.$result['template'];
+         
+        if (file_exists($base_path.'.xhtml')) {
+            self::outputTAL($result,$base_path.'.xhtml');
+        } 
+        else if (file_exists($base_path.'.php')) {
+            self::outputPHP($result,$base_path.'.php');
         }
+        else throw new Exception("No template $base_path");
+    }
+    
+    private static function outputPHP(array $_result, $_path)
+    {        
+        extract($_result, EXTR_SKIP);
         
-        extract($result,EXTR_SKIP);
+        require_once $_path;        
+    }
+    
+    
+    private static function outputTAL(array $result, $path)
+    {
+        $phptal = new PHPTAL($path);
+        foreach($result as $k => $v) $phptal->set($k,$v);
         
-        require_once $path;
-        die();
+        $phptal->echoExecute();
     }
 }

@@ -9,8 +9,8 @@ class Twitter extends EpiTwitter
     const CONSUMER_KEY = 'H1xFwXIVtUC6WI6S4WrQrg';
     const CONSUMER_SECRET = 'gB4owMNP3MULWJYtiIgXufKHmMOaKNoVYvdFobOAm4';
 
-    public static function create()
+    public function __construct()
     {
-        return new Twitter(self::CONSUMER_KEY, self::CONSUMER_SECRET);
+        return parent::__construct(self::CONSUMER_KEY, self::CONSUMER_SECRET);
     }
 }

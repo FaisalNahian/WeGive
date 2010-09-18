@@ -1,15 +1,19 @@
 <?php
 
+require_once APPLICATION_PATH.'php-activerecord/ActiveRecord.php';
+
 class Services
 {
-    protected $db;
-    
-    public function db()
-    {
-        if (!$this->db) {
-            $this->db = $this->db_connect();
-        }
-        return $this->db;
+    function __construct()
+    {                
+        ActiveRecord\Config::initialize(function($cfg) {
+            $conn = array(
+                'development' => Services::ARURL,
+            );
+            $cfg->set_model_directory('models');
+            $cfg->set_connections($conn);
+            $cfg->set_default_connection('development');
+        });
     }
     
     public function session()
@@ -20,7 +24,8 @@ class Services
         return $this->session;
     }
     
-    const DSN = 'pgsql:host=localhost;port=5432;dbname=wegive;user=wegive'; // FIXME
+//    const DSN = 'pgsql:host=localhost;port=5432;dbname=wegive;user=wegive'; // FIXME
+    const ARURL = 'pgsql://wegive@localhost:5432/wegive'; // FIXME
     
     private static function db_connect()  // FIXME: doesn't belong here
     {

@@ -4,8 +4,10 @@ class IndexController extends Controller
 {
     function index()
     {
+        $users = User::find('all');
+        
         return array(
-            'meh'=>$this->db()->q("SELECT * FROM users")->fetchAll(),
+            'users'=>$users,
         );
     }
     

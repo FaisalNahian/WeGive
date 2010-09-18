@@ -1,0 +1,12 @@
+<tal:block tal:condition="exists:added">
+    <tal:block tal:define="charity added" metal:use-macro="charity.xhtml/charity"/>
+</tal:block>
+
+
+<form method="post">
+    <div><label>Name <input name="name"/></label></div>
+    <div><label>Description <textarea name="description"/></label></div>
+    <div><label>Image URL <input name="image_url"/></label></div>
+    <div><label>MissionFish ID <input name="missionfish_id"/></label></div>
+    <input type="submit"/>
+</form>
