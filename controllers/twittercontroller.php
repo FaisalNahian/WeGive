@@ -35,11 +35,13 @@ class TwitterController extends Controller
         
         $user->save();
         
-        $this->login_user($user);  
+        $this->login_user($user);     
         
-        $twitter->update_friends_if_needed($user);
+//        return $this->return_to();
         
-        return $this->return_to();
+        return array(
+            'redirect'=>'/',
+        );
     }
         
     

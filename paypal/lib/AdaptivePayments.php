@@ -26,6 +26,7 @@ class AdaptivePayments extends CallerServices {
    			}
    				
    		}
+   		catch(FatalException $ex) {throw $ex;} 
    		catch(Exception $ex) {
 				  			
    			throw new FatalException('Error occurred in Pay method');
@@ -45,6 +46,7 @@ class AdaptivePayments extends CallerServices {
    			}
    				
    		}
+   		catch(FatalException $ex) {throw $ex;} 
    		catch(Exception $ex) {
 				  			
    			throw new FatalException('Error occurred in Pay method');
@@ -61,6 +63,7 @@ class AdaptivePayments extends CallerServices {
    				return $this->callAPI($paymentDetailsRequest, 'AdaptivePayments/PaymentDetails');	
    			}
    		}
+   		catch(FatalException $ex) {throw $ex;} 
    		catch(Exception $ex) {
 				  			
    			throw new FatalException('Error occurred in PaymentDetails method');
@@ -75,6 +78,7 @@ class AdaptivePayments extends CallerServices {
    				return $this->callAPI($executePaymentRequest, 'AdaptivePayments/ExecutePayment');	
    			}
    		}
+   		catch(FatalException $ex) {throw $ex;} 
    		catch(Exception $ex) {
 				  			
    			throw new FatalException('Error occurred in PaymentDetails method');
@@ -91,6 +95,7 @@ class AdaptivePayments extends CallerServices {
    				return $this->callAPI($getPaymentOptionsRequest, 'AdaptivePayments/GetPaymentOptions');	
    			}
    		}
+   		catch(FatalException $ex) {throw $ex;} 
    		catch(Exception $ex) {
 				  			
    			throw new FatalException('Error occurred in PaymentDetails method');
@@ -110,9 +115,10 @@ class AdaptivePayments extends CallerServices {
    			
    				
    		}
+   		catch(FatalException $ex) {throw $ex;} 
    		catch(Exception $ex) {
 				  			
-   			throw new FatalException('Error occurred in Preapproval method');
+   			throw new FatalException('Error occurred in Preapproval method: '.$ex->getMessage());
    		}      
       	   
    }
@@ -126,6 +132,7 @@ class AdaptivePayments extends CallerServices {
    			}
    				
    		}
+   		catch(FatalException $ex) {throw $ex;} 
    		catch(Exception $ex) {
 				  			
    			throw new FatalException('Error occurred in PreapprovalDetails method');
@@ -142,6 +149,7 @@ class AdaptivePayments extends CallerServices {
    				return $this->callAPI($cancelPreapprovalRequest, 'AdaptivePayments/CancelPreapproval');	
    			}
    		}
+   		catch(FatalException $ex) {throw $ex;} 
    		catch(Exception $ex) {
 				  			
    			throw new FatalException('Error occurred in CancelPreapproval method');
@@ -158,6 +166,7 @@ class AdaptivePayments extends CallerServices {
    			}
    			
    		}
+   		catch(FatalException $ex) {throw $ex;} 
    		catch(Exception $ex) {
 				  			
    			throw new FatalException('Error occurred in Refund method');
@@ -176,6 +185,7 @@ class AdaptivePayments extends CallerServices {
    			
    				
    		}
+   		catch(FatalException $ex) {throw $ex;} 
    		catch(Exception $ex) {
 				  			
    			throw new FatalException('Error occurred in ConvertCurrency method');
@@ -239,9 +249,10 @@ class AdaptivePayments extends CallerServices {
 	      	  
    			}  
    		} 
+   		catch(FatalException $ex) {throw $ex;} 
    		catch(Exception $ex) {
 				  			
-   			throw new FatalException('Error occurred in callAPI method');
+   			throw new FatalException('Error occurred in callAPI method: '.$ex->getMessage());
    		}
    		
    		return $response;

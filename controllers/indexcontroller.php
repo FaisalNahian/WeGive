@@ -11,10 +11,19 @@ class IndexController extends Controller
         );
     }
     
-    function not_found()
+    function log_out()
+    {
+        $this->logout();
+        return array(
+            'redirect'=>'/',
+        );
+    }
+    
+    function not_found($e = NULL)
     {
         return array(
             'template'=>'not_found',
+            'exception'=>$e,
         );
     }
     
@@ -31,7 +40,7 @@ class IndexController extends Controller
             );
         }
         
-        if ($e instanceof PageNotFoundException) return $this->not_found();
+        if ($e instanceof PageNotFoundException) return $this->not_found($e);
         
         return array(
             'exception'=>$e,

@@ -43,9 +43,13 @@ class Template
     
     private static function outputTAL(array $result, $path)
     {
-        $phptal = new PHPTAL($path);
+        $phptal = new PHPTAL();
         foreach($result as $k => $v) $phptal->set($k,$v);
         
-        $phptal->echoExecute();
+        $layout = clone $phptal;
+        $layout->setTemplate('templates/layout.xhtml');
+        $phptal->setTemplate($path);
+        $layout->content_phptal = $phptal;
+        $layout->echoExecute();
     }
 }

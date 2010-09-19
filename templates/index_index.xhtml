@@ -5,3 +5,11 @@ Lørem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
 
 <hr/>
 
+<div tal:condition="not:current_user">
+    <a href="/twitter/login">Log in with twitter</a>
+</div>
+
+<div tal:condition="current_user">
+    <a href="/user/show/${current_user/id}">Your profile</a> <a href="/index/log_out">Log out</a>
+</div>
+

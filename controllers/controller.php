@@ -11,6 +11,16 @@ class Controller
         $this->services = $services; 
     }
     
+    protected function abs_url($method)
+    {
+        return 'http://'.$_SERVER['HTTP_HOST'].$this->abs_path($method);
+    }
+    
+    protected function abs_path($method)
+    {
+        return '/'.$this->controller_name().'/'.$method;
+    }
+    
     protected function db()
     {
         return $this->services->db();
@@ -48,9 +58,13 @@ class Controller
         catch(LogicException $e) {
             $exists = false;
         }
+        
+        if (!$exists) {
+            throw new PageNotFoundException("can't find class $controller_class: ".$e->getMessage());
+        }
 
-        if (!$exists || !method_exists($controller_class, $method_name)) {
-            throw new PageNotFoundException();
+        if (!method_exists($controller_class, $method_name)) {
+            throw new PageNotFoundException("Class $controller_class lacks method $method_name");
         }
 
         $controller = new $controller_class($services);
@@ -62,9 +76,16 @@ class Controller
         $result = call_user_func_array(array($this,$method_name), $arguments);
 
         if (!isset($result['template'])) $result['template'] = $method_name;
-        if (!isset($result['controller_name'])) $result['controller_name'] = substr(get_class($this),0,-10);
+        if (!isset($result['controller_name'])) $result['controller_name'] = $this->controller_name();
 
+        $result['current_user'] = $this->is_logged_in() ? $this->logged_in_user() : NULL;
+        
         return $result;
+    }
+    
+    protected function controller_name()
+    {
+        return strtolower(substr(get_class($this),0,-10));
     }
 
 
@@ -75,23 +96,39 @@ class Controller
         $this->session()->user_id = $user->id;        
     }
     
+    protected function is_logged_in()
+    {
+        return !!$this->session()->user_id;
+    }
+    
     protected function logged_in_user()
     {
         $id = $this->session()->user_id;
-        $id=4;//if (!$id) throw new Exception("no id in session");
+        if (!$id) throw new Exception("no id in session");
         
         $user = User::find_by_id($id);
-        if (!$user) throw new LoginException("Can't find user");     
+        if (!$user) {
+            $this->logout();
+            throw new LoginException("Can't find user");     
+        }
         
         return $user;       
+    }
+    
+    protected function logout()
+    {
+        $this->session()->user_id = NULL;
     }
     
     //////////
     
     protected function return_to()
     {
+        $returnto = $this->session()->get('return_to','/');
+        $this->session()->set('return_to','/');
+        
         return array(
-            'redirect'=> $this->session()->get('return_to','/'),
+            'redirect'=> $returnto,
         );        
     }
     

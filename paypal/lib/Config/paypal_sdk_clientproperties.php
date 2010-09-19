@@ -39,7 +39,7 @@ define('PROXY_PORT', '808');
 
 /**
 # API user: The user that is identified as making the call. you can
-# also use your own API username that you created on PayPalís sandbox
+# also use your own API username that you created on PayPal√≠s sandbox
 # or the PayPal live site
 */
 
@@ -60,9 +60,9 @@ define('PROXY_PORT', '808');
 
 /***** 3token API credentials *****************/
 define('API_AUTHENTICATION_MODE','3token');
-define('API_USERNAME', 'platfo_1255077030_biz_api1.gmail.com');
-define('API_PASSWORD', '1255077037');
-define('API_SIGNATURE', 'Abg0gYcQyxQvnf2HDJkKtA-p6pqhA1k-KTYE0Gcy1diujFio4io5Vqjf');
+define('API_USERNAME', 'kornel_1284859794_biz_api1.geekhood.net');
+define('API_PASSWORD', '1284859804');
+define('API_SIGNATURE', 'An5ns1Kso7MWUdW4ErQKJJJ4qi4-AoNmjdM3Rb9sdjZ1Lugtr9srqAoq');
 
 /**
  * specifies the Log file path.

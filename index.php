@@ -5,6 +5,8 @@ define("APPLICATION_PATH",dirname(__FILE__)."/");
 set_include_path(APPLICATION_PATH."models/" .  PATH_SEPARATOR .
                  APPLICATION_PATH."lib/" . PATH_SEPARATOR . 
                  APPLICATION_PATH."controllers" . PATH_SEPARATOR . 
+                 APPLICATION_PATH."paypal/lib/" . PATH_SEPARATOR . 
+                 "/usr/lib/php/" . PATH_SEPARATOR . 
                  get_include_path());
 
 spl_autoload_register();

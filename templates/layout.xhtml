@@ -1,10 +1,14 @@
-<html metal:define-macro="main">
+<!DOCTYPE html>
+<html>
 <head>
     <meta charset="UTF-8"/>
     <title>${title | 'WeGive'}</title>
 </head>
 <body>
-    <h1>WeGive</h1>
+    <h1><a href="/">WeGive</a></h1>
     <hr/>
-    <div id="content" metal:define-slot="content"/>    
-</body></html>
+    <div id="content">
+        <?php $ctx->content_phptal->echoExecute(); ?>
+    </div>    
+</body>
+</html>
