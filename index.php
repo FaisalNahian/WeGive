@@ -11,6 +11,8 @@ set_include_path(APPLICATION_PATH."models/" .  PATH_SEPARATOR .
 
 spl_autoload_register();
 
+require_once "helpers.php";
+
 $services = NULL;
 try {
     $services = new Services();

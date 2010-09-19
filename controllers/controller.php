@@ -112,7 +112,7 @@ class Controller
     protected function logged_in_user()
     {
         $id = $this->session()->user_id;
-        if (!$id) throw new Exception("no id in session");
+        if (!$id) throw new LoginException("no id in session");
 
         $user = User::find_by_id($id);
         if (!$user) {

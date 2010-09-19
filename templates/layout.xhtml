@@ -8,29 +8,38 @@
 <body class="${controller_name}_section ${method_name}_page">
 	<div id="container">
 		<div id="nav">
-			<ul id="main_nav">
-				<li><a href="/twitter/login">text link</a></li>
-				<li><a href="/twitter/login">text link</a></li>
-				<li class="active"><a href="/twitter/login">text link</a></li>
-			</ul>
 			
-			<ul id="setting">
-				<li><a href="/twitter/login">text link</a></li>
-				<li><a href="/twitter/login">text link</a></li>
-				<li><a href="/twitter/login">text link</a></li>
+			<!-- loggout -->
+			<a tal:condition="not:current_user" href="/twitter/login" id="twiter_signin"><span>sign in on twitter</span></a>	
+			
+			<ul id="main_nav">
+				<li><a href="/charity/listing">Charities</a></li>
+				<li><a href="/">text link</a></li>
+				<li class="active"><a href="/twitter/login">text link</a></li>
+			</ul>					
+			
+			<!-- logged in -->
+			<ul id="setting" tal:condition="current_user">
+				<li><a href="/user/show/${current_user/id}">My profile</a></li>
+				<li><a href="/index/log_out">Log out</a></li>
 			</ul>
 		</div>
 		
 		<div id="sub_nav">
 			<ul>
-				<li><a href="/twitter/login">link</a></li>
-				<li><a href="/twitter/login">link</a></li>
-				<li><a href="/twitter/login">link</a></li>
-				<li><a href="/twitter/login">link</a></li>
+				<li><a href="/">link</a></li>
+				<li><a href="/">link</a></li>
+				<li><a href="/">link</a></li>
+				<li><a href="/">link</a></li>
 			</ul>
 		</div>
 		
+		
 		<div id="content">
+		    <div id="sidebar" tal:condition="not:true:hide_sidebar">
+		        THIS IS SIDEBAAAR
+		        <!-- put sidebar here? -->
+		    </div>    
         <?php $ctx->content_phptal->echoExecute(); ?>
 		</div>
     </div>    

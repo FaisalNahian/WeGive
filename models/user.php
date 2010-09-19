@@ -33,6 +33,11 @@ class User extends Model
         // }
     }
     
+    public function has_active_challenge()
+    {
+        return $this->id%23==1 || $this->twitter_oauth_token || count($this->challenges);
+    }
+    
     public function followers_available()
     {
         return !!$this->twitter_oauth_token; 

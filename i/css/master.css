@@ -4,19 +4,19 @@ body {
 }
 
 #container {
-	width: 996px;
+	width: 994px;
 	display: block;
 	margin: 0 auto;
 }
 
 .user_section #content {
-	float: left;
-	width: 100%;
 	background: url(/i/img/two_col_bg.png) repeat-y -1px;
-	padding: 0 0 32px 0;
 }
 
 #content {
+	float: left;
+	width: 100%;
+	padding: 0 0 32px 0;
 	background-color: #A61D09;
 	color: #ffffff;
 }
@@ -54,7 +54,7 @@ h5 {
 #nav {
 	float: left;
 	width: 994px;
-	height: 140px;
+	height: 122px;
 	background: #B21F0A url(/i/img/logo.png) no-repeat 0 32px;
 	font: 14px/24px MetaCondNormal, Arial, Helvetica, Geneva, sans-serif;
 }
@@ -62,9 +62,9 @@ h5 {
 #main_nav {
 	float: left;
 	background-color: #B21F0A;
-	width: 624px;
+	width: 500px;
 	height: 34px;
-	margin: 106px 0 0 0;
+	margin: 88px 0 0 0;
 }
 
 #setting {
@@ -131,6 +131,17 @@ h5 {
 #main_nav li.active a,
 #setting li.active a {
 	color: #B21F0A;
+}
+
+#twiter_signin {
+	float: right;
+	width: 435px;
+	height: 122px;
+	background-image: url(../img/twitter-link.png);
+}
+
+#twiter_signin span {
+	display: none;
 }
 
 #sub_nav {
@@ -346,7 +357,20 @@ h5 {
 }
 
 #col_1 {
+	
+}
 
+.homepage_challenge {
+	float: left;
+	width: 305px;
+	height: 71px;
+	display: block;
+	margin: 0 0 0 0;
+	background-image: url(../img/item-fake.jpg);
+}
+
+.homepage_challenge span {
+	display: none;
 }
 
 #col_2 {
@@ -358,9 +382,22 @@ h5 {
 
 }
 
+#home_header {
+	float: left;
+	width: 994px;
+	height: 317px;
+	background-image: url(../img/home-feature-bg.jpg);
+}
+
 /* @group added code */
 
-
-
+.index_page #sub_nav {display:none;}
+.itemWrap {padding:1em; background:#fff; overflow:hidden; -moz-box-shadow: 3px 3px 4px #000; -webkit-box-shadow: 3px 3px 4px #000; box-shadow: 3px 3px 4px #000;}
+.itemList {padding:1em 0;}
+.itemList {list-style-type:none;}
+.itemInfo {overflow:hidden;}
+.itemInfo .itemTitle { color:#333; font-size:14px; font-weight:bold; text-decoration:none;}
+.itemInfo .itemName {color:#333; font-size:12px; text-decoration:none;}
+.yellowBtn {padding:5px 10px; background:}
 /* @end */
 

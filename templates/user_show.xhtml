@@ -1,33 +1,28 @@
-<div id="user_over_view">
-	<div id="twitter_profile">
-		<img src="${user/profile_image_url}" tal:condition="user/profile_image_url" width="50px" height="50px" alt=""/>
-		<h1 tal:content="user/screen_name">User name</h1>
-	</div>
-	<div id="wegive_profile">
-		<h2>Donated<span>£100</span></h2>
-		<h2>Raised<span>£200</span></h2>
-		<h2>Targeted<span>£300</span></h2>
-		
-		<div id="badge_container">
-			<h2>Badge</h2>
-			<a href=""><span>badge name</span></a>
-			<a href=""><span>badge name</span></a>
-			<a href=""><span>badge name</span></a>
-			<a href=""><span>badge name</span></a>
-		</div>
-	</div>
-</div>
+<tal:block metal:use-macro="user.xhtml/overview"/>
 
 <div id="bio_friends">
 	<h4>Profile</h4>
 	<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and fe
 	</p>
 	<div id="followers" tal:condition="user/followers_available">
+	    <tal:block tal:define="followers user/get_followers">
+	    <h4>Challenges by your friends</h4>
+	    <tal:block tal:repeat="follower followers">
+    	    <a href="/user/show/${follower/id}" tal:condition="follower/has_active_challenge">
+    	        <img src="${follower/profile_image_url}" alt="${follower/screen_name}" title="${follower/screen_name}" />
+    	    </a>
+    	</tal:block>    
+
 	    <h4>Friends</h4>
-	    <a tal:repeat="follower user/get_followers" href="/user/show/${follower/id}">
-	        <img src="${follower/profile_image_url}" alt="${follower/screen_name}" title="${follower/screen_name}" />
-	    </a>
-</div>    </div>	
+	    <tal:block tal:repeat="follower followers">
+    	    <a href="/user/show/${follower/id}">
+    	        <img src="${follower/profile_image_url}" alt="${follower/screen_name}" title="${follower/screen_name}" />
+    	    </a>
+    	</tal:block>    
+	    </tal:block>
+    </div>    
+</div>	
+	
 	<div id="user_feed" tal:define="challenges php:user.challenges">
 	    
 	    <div tal:condition="not:challenges">${user/screen_name} hasn't started any challenge yet.</div>

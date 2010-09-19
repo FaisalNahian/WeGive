@@ -7,25 +7,25 @@ class Challenge extends Model
         array('charity'),
     );
     
-    public function to_pounds($pence)
-    {
-        return '£'.round($pence/100,2);
-    }
     
     public function goal_pounds()
     {
-        return $this->to_pounds($this->matching_upper_limit_pence);
+        return to_pounds($this->matching_upper_limit_pence);
     }
 
     public function match_pounds()
     {
-        return $this->to_pounds($this->matching_upper_limit_pence * $this->matching_percentage/100);
+        return to_pounds($this->matching_upper_limit_pence * $this->matching_percentage/100);
     }
     
     public function match_per_pence($value_pence)
     {
-        return $this->to_pounds($value_pence*$this->matching_percentage/100);
+        return to_pounds($value_pence*$this->matching_percentage/100);
     }
     
+    public function base_donation_pounds()
+    {
+        return to_pounds($this->base_donation_pence);
+    }
 }
 

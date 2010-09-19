@@ -20,10 +20,14 @@ class CharityController extends Controller
     }
     
     function challenge($charity_id) {
+        $user = $this->logged_in_user();
+        
         $charity = Charity::find_by_id($charity_id);
         if (!$charity) throw new PageNotFoundException();
         
-        
+        return array(
+            'charity'=>$charity,
+        );
     }
     
     function donate($challenge_id) {
@@ -51,6 +55,7 @@ class CharityController extends Controller
     {
         return array(
             'charities'=>Charity::find('all'),
+            'hide_sidebar'=>true,
         );
     }
 }

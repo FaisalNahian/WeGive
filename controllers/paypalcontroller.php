@@ -23,7 +23,7 @@ class PaypalController extends Controller
     const APP_ID = 'APP-80W284485P519543T'; // FIXME: configurable
     const CURRENCY = "GBP";
     
-    function test()
+    function new_challenge($charity_id)
     {
         $preapprovalKey = $this->preapproval("foo@bar.example.com","50.00");
 
@@ -38,6 +38,7 @@ class PaypalController extends Controller
     
     function ok()
     {
+        
     }
     
     function preapproval($senderEmail, $amount)
