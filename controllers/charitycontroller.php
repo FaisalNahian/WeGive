@@ -19,7 +19,7 @@ class CharityController extends Controller
         );
     }
     
-    function challenge($charity_id) {
+    function challenge($charity_id=0) {
         $user = $this->logged_in_user();
         
         $charity = Charity::find_by_id($charity_id);

@@ -1,25 +1,39 @@
 
-<h1>Donate to ${charity/name} and set a challenge!</h1>
+				<h2 id="active_bointies_heading">Set the challenge</h2>
+				<p>&nbsp;</p>
 
-<form action="/paypal/new_challenge/${charity/id}" method="post">
-<ol>
-    <li><h2>Donate to ${charity/name}</h2>
-        <div tal:repeat="value_pence php:array(500,1000,2000,5000,10000)">
-            <label><input type="radio" name="value_pence"/> ${php:to_pounds(value_pence)}</label>
-        </div>
-    </li>
-    <li>
-        <h2>Add a challenge!</h2>
-        <p>Challenge your friends to donate by promising to match every £10 they donate with <input/> up to maximum <input value=""/>). Together you'll donate $$$! If your friends won't reach that goal, charity will only get donation amount above.</p>
-    </li>
-    <li>
-        <h2>Select sponsor to donate even more!</h2>
-        <p>If your friends meet your challenge, company of your choosing will donate additioinal $$$:</p>
-        <div><label><input type="radio"/> BigCorp International</label></div>
-        <div><label><input type="radio"/> DeepPockets Ltd.</label></div>
-        <div><label><input type="radio"/> Lorem &amp; Ipsum Inc.</label></div>
-    </li>
-    
+<form id="set-donation-challenge" name="setDonationChallenge" action="/paypal/new_challenge/${charity/id}" method="post">
+
+<ol id="form">
+
+
+
+  <li>
+	  <h2>Initial donation</h2>
+	  <ol id="donation-selection"  class="radio-button-list">
+	    <li><input type="radio" name="donationList" id="donation5" /> <label for="donation5">&pound;5</label></li>
+	    <li><input type="radio" name="donationList" id="donation10" /> <label for="donation10">&pound;10</label></li>
+
+	    <li><input type="radio" name="donationList" id="donation20" /> <label for="donation20">&pound;20</label></li>
+	    <li>
+  	    <input type="radio" name="donationList" id="other" />
+  	    <label for="other">Other</label> 
+  	    <input type="text" name="donationList" id="other-donation-amount" /> 
+	    </li>
+	  </ol>	  
+  </li>
+
+
+  <li id="donation-reward">
+
+    <h2 class="visually-hidden">Donation reward</h2>
+	  <p>      	  
+  	  For each <input type="checkbox" name="" id="" /> donation, I will give <input type="text" name="" id="" />
+      When the target of  <input type="text" name="" id="" /> is reached.
+    </p>
+  </li>
 </ol>
-<input type="submit" value="Donate with PayPal"/> <a href="/paypal/ok">pretend paypal is done</a>
+
+
+<input type="submit" value="Set challenge" />
 </form>

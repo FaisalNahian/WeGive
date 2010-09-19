@@ -414,13 +414,15 @@ h5 {
 }
 
 .donate_page #content,
-.ok_page #content {
+.ok_page #content,
+.challenge_page #content {
 	background-color: #ffffff;
 	color: #333333;
 }
 
 .donate_page #content *,
-.ok_page #content * {
+.ok_page #content *,
+.challenge_page #content * {
 	margin: 8px 0 8px 16px;
 }
 
@@ -450,7 +452,8 @@ border: none;}
       clip: rect(1px, 1px, 1px, 1px);
       }
 	  
-	  #form li { background:#fff; margin-bottom: 40px; list-style-position: inside; -moz-box-shadow: 1px 1px 4px #000; -webkit-box-shadow: 1px 1px 4px #000;   box-shadow: 1px 1px 4px #000;-moz-border-radius: 5px;border-radius: 5px; padding:1em;}
+	  #form li { background:#fff; margin-bottom: 40px; list-style-position: inside; -moz-box-shadow: 1px 1px 4px #000; -webkit-box-shadow: 1px 1px 4px #000;   box-shadow: 1px 1px 4px #000;-moz-border-radius: 5px;border-radius: 5px; padding:1em;
+	  width: 80%;}
 	   li h2 { display: inline }
       li li { clear: none }
       li ol,

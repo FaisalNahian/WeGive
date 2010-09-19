@@ -6,7 +6,7 @@
 	</p>
 	<div id="followers" tal:condition="user/followers_available">
 	    <tal:block tal:define="followers user/get_followers">
-	    <h4>Your friends on We Give</h4>
+	    <h4>${user/screen_name}'s friends on We Give</h4>
 	    <tal:block tal:repeat="follower followers">
     	    <a href="/user/show/${follower/id}" tal:condition="follower/has_active_challenge">
     	        <img src="${follower/profile_image_url}" alt="${follower/screen_name}" title="${follower/screen_name}" />
