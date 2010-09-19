@@ -1,14 +1,96 @@
-<h1 tal:content="user/screen_name">User name</h1>
-
-<img src="${user/profile_image_url}" tal:condition="user/profile_image_url" alt=""/>
-
-<div id="followers" tal:condition="user/followers_available">
-<h2>Followers</h2>
-
-<ul>
-    <li tal:repeat="follower user/get_followers">
-        <a href="/user/show/${follower/id}" tal:content="follower/screen_name"/>
-    </li>
-</ul>
+<div id="user_over_view">
+	<div id="twitter_profile">
+		<img src="${user/profile_image_url}" tal:condition="user/profile_image_url" width="50px" height="50px" alt=""/>
+		<h1 tal:content="user/screen_name">User name</h1>
+	</div>
+	<div id="wegive_profile">
+		<h2>Donated<span>£100</span></h2>
+		<h2>Raised<span>£200</span></h2>
+		<h2>Targeted<span>£300</span></h2>
+		
+		<div id="badge_container">
+			<h2>Badge</h2>
+			<a href=""><span>badge name</span></a>
+			<a href=""><span>badge name</span></a>
+			<a href=""><span>badge name</span></a>
+			<a href=""><span>badge name</span></a>
+		</div>
+	</div>
 </div>
+
+<div id="bio_friends">
+	<h4>Profile</h4>
+	<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and fe
+	</p>
+	<div id="followers" tal:condition="user/followers_available">
+	    <h4>Friends</h4>
+	    <a tal:repeat="follower user/get_followers" href="/user/show/${follower/id}">
+	        <img src="${follower/profile_image_url}" alt="${follower/screen_name}" title="${follower/screen_name}" />
+	    </a>
+</div>    </div>	
+	<div id="user_feed">
+		<div id="active_bounties">
+			<h2 id="active_bointies_heading">Arran's challenges</h2>
+			<div class="active_bointie">
+				<h3>Charity name</h3>
+				<div class="bar_container">
+					<div class="bar" style="width:100px;"></div>
+				</div>
+				<div class="bountie_stats">
+			
+				</div>
+				<p>If Arran's friends donate £500, he will donate another £50.</p>
+				<a class="donate_button">Donate</a>
+			</div>
+			<div class="active_bointie">
+				<h3>Charity name</h3>
+				<div class="bar_container">
+					<div class="bar" style="width:100px;"></div>
+				</div>
+				<div class="bountie_stats">
+			
+				</div>
+				<p>If Arran's friends donate £500, he will donate another £50.</p>
+				<a class="donate_button">Donate</a>
+			</div>
+			<div class="active_bointie">
+				<h3>Charity name</h3>
+				<div class="bar_container">
+					<div class="bar" style="width:100px;"></div>
+				</div>
+				<div class="bountie_stats">
+			
+				</div>
+				<p>If Arran's friends donate £500, he will donate another £50.</p>
+				<a class="donate_button">Donate</a>
+			</div>
+			<div class="active_bointie">
+				<h3>Charity name</h3>
+				<div class="bar_container">
+					<div class="bar" style="width:100px;"></div>
+				</div>
+				<div class="bountie_stats">
+			
+				</div>
+				<p>If Arran's friends donate £500, he will donate another £50.</p>
+				<a class="donate_button">Donate</a>
+			</div>
+			<div class="active_bointie">
+				<h3>Charity name</h3>
+				<div class="bar_container">
+					<div class="bar" style="width:100px;"></div>
+				</div>
+				<div class="bountie_stats">
+			
+				</div>
+				<p>If Arran's friends donate £500, he will donate another £50.</p>
+				<a class="donate_button">Donate</a>
+			</div>
+		</div>
+		
+	</div>
+
+
+
+
 

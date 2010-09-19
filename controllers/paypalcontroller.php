@@ -51,8 +51,8 @@ class PaypalController extends Controller
 
 		$preapprovalRequest = new PreapprovalRequest();
 		$preapprovalRequest->memo = "To be paid to charity if challenge is met";
-		$preapprovalRequest->cancelUrl = $this->abs_url('cancel');
-		$preapprovalRequest->returnUrl = $this->abs_url('ok');
+		$preapprovalRequest->cancelUrl = $this->abs_url('cancel').'?preapprovalKey=${preapprovalKey}';
+		$preapprovalRequest->returnUrl = $this->abs_url('ok').'?preapprovalKey=${preapprovalKey}';
 		$preapprovalRequest->clientDetails = new ClientDetailsType();
 		$preapprovalRequest->clientDetails->applicationId = self::APP_ID;
 		$preapprovalRequest->clientDetails->deviceId = "PayPal_PHP_SDK"; // FIXME: user-agent or session_id
@@ -61,7 +61,7 @@ class PaypalController extends Controller
 		$preapprovalRequest->currencyCode = self::CURRENCY;
 		$preapprovalRequest->startingDate = $startDate;
 		$preapprovalRequest->endingDate = $endDate;
-		$preapprovalRequest->maxNumberOfPayments = "10" ;
+//		$preapprovalRequest->maxNumberOfPayments = "10" ;
 		$preapprovalRequest->maxTotalAmountOfAllPayments = $amount;
 		$preapprovalRequest->requestEnvelope = new RequestEnvelope();
 		$preapprovalRequest->requestEnvelope->errorLanguage = "en_US";//default it is en_US, which is the only language currently supported

@@ -11,14 +11,17 @@ class Controller
         $this->services = $services; 
     }
     
-    protected function abs_url($method)
+    protected function abs_url($method, array $args = array())
     {
-        return 'http://'.$_SERVER['HTTP_HOST'].$this->abs_path($method);
+        return 'http://'.$_SERVER['HTTP_HOST'].$this->abs_path($method,$args);
     }
     
-    protected function abs_path($method)
+    protected function abs_path($method, array $args = array())
     {
-        return '/'.$this->controller_name().'/'.$method;
+        array_unshift($args, $method);
+        array_walk($args, function(&$arg){$arg = rawurlencode($arg);});
+        
+        return '/'.$this->controller_name().'/'.implode('/',$args);
     }
     
     protected function db()
@@ -37,6 +40,9 @@ class Controller
             $controller_name = $m[1];
             $method_name = !empty($m[2]) ? $m[2] : 'index';
             $arguments = isset($m[3]) ? explode('/',$m[3]) : array();
+            array_walk($arguments, function(&$arg){
+                $arg = rawurldecode($arg);
+            });                
         }
         else
         {
@@ -48,7 +54,7 @@ class Controller
         return self::run_controller($services, $controller_name, $method_name, $arguments);
     }    
     
-    public static function run_controller(Services $services = NULL, $controller_name, $method_name, $arguments)
+    public static function run_controller(Services $services = NULL, $controller_name, $method_name, array $arguments)
     {
         $controller_class = strtolower($controller_name).'controller';
 

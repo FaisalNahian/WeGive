@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="/i/css/master.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+	<meta charset="UTF-8" />
     <title>${title | 'WeGive'}</title>
 </head>
 <body>
-    <h1><a href="/">WeGive</a></h1>
-    <hr/>
-    <div id="content">
+	<div id="container">
+		<div id="nav">
+			<ul id="main_nav">
+				<li><a href="/twitter/login">text link</a></li>
+				<li><a href="/twitter/login">text link</a></li>
+				<li class="active"><a href="/twitter/login">text link</a></li>
+			</ul>
+			
+			<ul id="setting">
+				<li><a href="/twitter/login">text link</a></li>
+				<li><a href="/twitter/login">text link</a></li>
+				<li><a href="/twitter/login">text link</a></li>
+			</ul>
+		</div>
+		
+		<div id="sub_nav">
+			<ul>
+				<li><a href="/twitter/login">link</a></li>
+				<li><a href="/twitter/login">link</a></li>
+				<li><a href="/twitter/login">link</a></li>
+				<li><a href="/twitter/login">link</a></li>
+			</ul>
+		</div>
+		
+		<div id="content">
         <?php $ctx->content_phptal->echoExecute(); ?>
+		</div>
     </div>    
 </body>
 </html>
