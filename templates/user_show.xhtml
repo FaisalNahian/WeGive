@@ -28,63 +28,23 @@
 	        <img src="${follower/profile_image_url}" alt="${follower/screen_name}" title="${follower/screen_name}" />
 	    </a>
 </div>    </div>	
-	<div id="user_feed">
-		<div id="active_bounties">
-			<h2 id="active_bointies_heading">Arran's challenges</h2>
-			<div class="active_bointie">
-				<h3>Charity name</h3>
-				<div class="bar_container">
-					<div class="bar" style="width:100px;"></div>
-				</div>
-				<div class="bountie_stats">
+	<div id="user_feed" tal:define="challenges php:user.challenges">
+	    
+	    <div tal:condition="not:challenges">${user/screen_name} hasn't started any challenge yet.</div>
+	    
+		<div id="active_bounties" tal:condition="challenges">
+			<h2 id="active_bointies_heading">${user/screen_name}'s challenges</h2>
 			
-				</div>
-				<p>If Arran's friends donate £500, he will donate another £50.</p>
-				<a class="donate_button">Donate</a>
-			</div>
-			<div class="active_bointie">
-				<h3>Charity name</h3>
-				<div class="bar_container">
-					<div class="bar" style="width:100px;"></div>
-				</div>
-				<div class="bountie_stats">
-			
-				</div>
-				<p>If Arran's friends donate £500, he will donate another £50.</p>
-				<a class="donate_button">Donate</a>
-			</div>
-			<div class="active_bointie">
-				<h3>Charity name</h3>
-				<div class="bar_container">
-					<div class="bar" style="width:100px;"></div>
-				</div>
-				<div class="bountie_stats">
-			
-				</div>
-				<p>If Arran's friends donate £500, he will donate another £50.</p>
-				<a class="donate_button">Donate</a>
-			</div>
-			<div class="active_bointie">
-				<h3>Charity name</h3>
-				<div class="bar_container">
-					<div class="bar" style="width:100px;"></div>
-				</div>
-				<div class="bountie_stats">
-			
-				</div>
-				<p>If Arran's friends donate £500, he will donate another £50.</p>
-				<a class="donate_button">Donate</a>
-			</div>
-			<div class="active_bointie">
-				<h3>Charity name</h3>
-				<div class="bar_container">
-					<div class="bar" style="width:100px;"></div>
-				</div>
-				<div class="bountie_stats">
-			
-				</div>
-				<p>If Arran's friends donate £500, he will donate another £50.</p>
-				<a class="donate_button">Donate</a>
+			<div class="active_bointie" tal:repeat="challenge challenges">
+			    <tal:block tal:define="charity php:challenge.charity">
+			        <h3 tal:content="charity/name" />
+    				<div class="bar_container">
+    					<div class="bar" style="width:100px;"></div>
+    				</div>
+    				<p>If ${user/screen_name}'s friends donate ${challenge/goal_pounds}, he/she will donate another ${challenge/match_pounds}.</p>
+    				
+    				<a href="/charity/donate/${challenge/id}" class="donate_button">Donate</a>
+			    </tal:block>
 			</div>
 		</div>
 		

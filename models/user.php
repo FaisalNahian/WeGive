@@ -4,6 +4,7 @@ class User extends Model
 {
     static $has_many = array(
         array('follows'),
+        array('challenges'),
         array('followers', 'class_name'=>'User',  'through'=>'follows'),
     );
     
@@ -34,7 +35,7 @@ class User extends Model
     
     public function followers_available()
     {
-        return !!$this->followers_last_updated_date; 
+        return !!$this->twitter_oauth_token; 
     }
     
     private $followers;

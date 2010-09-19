@@ -19,6 +19,24 @@ class CharityController extends Controller
         );
     }
     
+    function challenge($charity_id) {
+        $charity = Charity::find_by_id($charity_id);
+        if (!$charity) throw new PageNotFoundException();
+        
+        
+    }
+    
+    function donate($challenge_id) {
+        $challenge = Challenge::find_by_id($challenge_id);
+        if (!$challenge) throw new PageNotFoundException();
+        
+        return array(
+            'challenge'=>$challenge,
+            'charity'=>$challenge->charity,
+            'challenger'=>$challenge->user,
+        );
+    }
+    
     function show($id)
     {
         $c = Charity::find_by_id($id);

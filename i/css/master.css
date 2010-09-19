@@ -9,11 +9,16 @@ body {
 	margin: 0 auto;
 }
 
-#content {
+.user_section #content {
 	float: left;
 	width: 100%;
 	background: url(/i/img/two_col_bg.png) repeat-y -1px;
 	padding: 0 0 32px 0;
+}
+
+#content {
+	background-color: #A61D09;
+	color: #ffffff;
 }
 
 * {
@@ -312,7 +317,7 @@ h5 {
 
 .donate_button {
 	float: left;
-	padding: 12px 32px;
+	padding: 4px 24px;
 	background-color: #cccccc;
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
@@ -321,14 +326,36 @@ h5 {
 
 .bar_container {
 	float: left;
-	width: 200px;
+	width: 180px;
 	padding: 4px;
+	margin: 0 16px 0 0;
 	border: 1px solid #cccccc;
 }
 
 .bar_container .bar {
-	height: 40px;
+	height: 24px;
 	background-color: #cccccc;
+}
+
+.col {
+	float: left;
+	width: 312px;
+	padding: 0;
+	margin: 0 0 0 8px;
+	display: block;
+}
+
+#col_1 {
+
+}
+
+#col_2 {
+
+}
+
+#col_3 {
+	width: 334px;
+
 }
 
 /* @group added code */

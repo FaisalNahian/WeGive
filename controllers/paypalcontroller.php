@@ -6,6 +6,9 @@ require_once "AdaptivePayments.php";
 
 // app id 
 
+// test buyer: buyer_1284871282_per@geekhood.net
+// pass: buyerbuyer
+
 /*
 Test Account:	kornel_1284859794_biz@geekhood.net
 API Username:	kornel_1284859794_biz_api1.geekhood.net

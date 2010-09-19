@@ -24,6 +24,7 @@ class Twitter extends EpiTwitter
         $user->twitter_id = $creds->id;
         $user->screen_name = $creds->screen_name;
         $user->profile_image_url = $creds->profile_image_url;
+        //$user->description = $creds->;
         
         return $user;
     }
