@@ -1,0 +1,741 @@
+09:32:43 07/06/10 caller [info] #####SOAP#####
+09:32:43 07/06/10 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><CreateAccountRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <clientDetails>
+        <ipAddress>127.0.0.1</ipAddress>
+        <deviceId>PayPal_PHP_SDK</deviceId>
+        <applicationId>APP-80W284485P519543T</applicationId>
+    </clientDetails>
+    <accountType>PERSONAL</accountType>
+    <name>
+        <salutation>Dr.</salutation>
+        <firstName>Bonzop</firstName>
+        <middleName>Simore</middleName>
+        <lastName>Zaius</lastName>
+    </name>
+    <dateOfBirth>1968-01-01</dateOfBirth>
+    <address>
+        <line1>1968 Ape Way</line1>
+        <line2>Apt 123</line2>
+        <city>Austin</city>
+        <state>TX</state>
+        <postalCode>78750</postalCode>
+        <countryCode>US</countryCode>
+    </address>
+    <contactPhoneNumber>512-691-4160</contactPhoneNumber>
+    <currencyCode>USD</currencyCode>
+    <citizenshipCountryCode>US</citizenshipCountryCode>
+    <preferredLanguageCode>en_US</preferredLanguageCode>
+    <notificationURL>http://stranger.paypal.com/cgi-bin/ipntest.cgi</notificationURL>
+    <emailAddress>testaccount767770@paypal.com</emailAddress>
+    <registrationType>WEB</registrationType>
+    <partnerField1>p1</partnerField1>
+    <partnerField2>p2</partnerField2>
+    <partnerField3>p3</partnerField3>
+    <partnerField4>p4</partnerField4>
+    <partnerField5>p5</partnerField5>
+    <sandboxEmailAddress>Platform.sdk.seller@gmail.com</sandboxEmailAddress>
+</CreateAccountRequest></soap:Body>
+</soap:Envelope>
+
+09:32:48 07/06/10 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header /><soapenv:Body><ns2:CreateAccountResponse xmlns:ns2="http://svcs.paypal.com/types/aa"><responseEnvelope><timestamp>2010-07-06T02:32:48.989-07:00</timestamp><ack>Success</ack><correlationId>df01b1ac9bd33</correlationId><build>1365715</build></responseEnvelope><createAccountKey>AA-4WK94490BG236345B</createAccountKey><execStatus>COMPLETED</execStatus><redirectURL>https://www.sandbox.paypal.com/us/cgi-bin/webscr?cmd=_hostedua-flow&amp;encrypted_second_auth_code=AgVRrNdKrCfl2SKD1FtR4Kbch8GSNYOEtDfGy9dlSqisMPG8pkdAGwdn7wPr9vWcCok&amp;encrypted_id=MSVNAQ4QG7ZJN</redirectURL></ns2:CreateAccountResponse></soapenv:Body></soapenv:Envelope>
+09:32:48 07/06/10 caller [info] #####SOAP#####
+09:32:48 07/06/10 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><CreateAccountRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <clientDetails>
+        <ipAddress>127.0.0.1</ipAddress>
+        <applicationId>APP-80W284485P519543T</applicationId>
+    </clientDetails>
+    <accountType>BUSINESS</accountType>
+    <name>
+        <salutation>Dr.</salutation>
+        <firstName>Bonzop</firstName>
+        <middleName>Simore</middleName>
+        <lastName>Zaius</lastName>
+    </name>
+    <dateOfBirth>1968-01-01</dateOfBirth>
+    <address>
+        <line1>1968 Ape Way</line1>
+        <line2>Apt 123</line2>
+        <city>Austin</city>
+        <state>TX</state>
+        <postalCode>78750</postalCode>
+        <countryCode>US</countryCode>
+    </address>
+    <contactPhoneNumber>512-691-4160</contactPhoneNumber>
+    <currencyCode>USD</currencyCode>
+    <citizenshipCountryCode>US</citizenshipCountryCode>
+    <preferredLanguageCode>en_US</preferredLanguageCode>
+    <notificationURL>http://stranger.paypal.com/cgi-bin/ipntest.cgi</notificationURL>
+    <emailAddress>testaccount182961@paypal.com</emailAddress>
+    <registrationType>WEB</registrationType>
+    <createAccountWebOptions />
+    <partnerField1>p1</partnerField1>
+    <partnerField2>p2</partnerField2>
+    <partnerField3>p3</partnerField3>
+    <partnerField4>p4</partnerField4>
+    <partnerField5>p5</partnerField5>
+    <businessInfo>
+        <businessName>Bonzop</businessName>
+        <businessAddress>
+            <line1>1968 Ape Way</line1>
+            <line2>Apt 123</line2>
+            <city>Austin</city>
+            <state>TX</state>
+            <postalCode>78750</postalCode>
+            <countryCode>US</countryCode>
+        </businessAddress>
+        <workPhone>512-691-4160</workPhone>
+        <category>1001</category>
+        <subCategory>2002</subCategory>
+        <customerServicePhone>512-691-4160</customerServicePhone>
+        <customerServiceEmail>testaccount1182822@paypal.com</customerServiceEmail>
+        <webSite>https://www.x.com</webSite>
+        <dateOfEstablishment>1968-01-01</dateOfEstablishment>
+        <businessType>INDIVIDUAL</businessType>
+        <averagePrice>100</averagePrice>
+        <averageMonthlyVolume>100</averageMonthlyVolume>
+        <percentageRevenueFromOnline>100</percentageRevenueFromOnline>
+        <salesVenue>WEB</salesVenue>
+    </businessInfo>
+    <sandboxEmailAddress>Platform.sdk.seller@gmail.com</sandboxEmailAddress>
+</CreateAccountRequest></soap:Body>
+</soap:Envelope>
+
+09:32:53 07/06/10 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header /><soapenv:Body><ns2:CreateAccountResponse xmlns:ns2="http://svcs.paypal.com/types/aa"><responseEnvelope><timestamp>2010-07-06T02:32:54.308-07:00</timestamp><ack>Success</ack><correlationId>a3ea04f89ca65</correlationId><build>1365715</build></responseEnvelope><createAccountKey>AA-5GK89134EH833310T</createAccountKey><execStatus>COMPLETED</execStatus><redirectURL>https://www.sandbox.paypal.com/us/cgi-bin/webscr?cmd=_hostedua-flow&amp;encrypted_second_auth_code=AgbY9X8Z.fJ83Clpom4FaqUQSRG.Cb5it58.BaucyJlRtU-mkipABLEpbsUTwNo4ChE&amp;encrypted_id=88YGXHVXGUQ3E</redirectURL></ns2:CreateAccountResponse></soapenv:Body></soapenv:Envelope>
+09:32:53 07/06/10 caller [info] #####SOAP#####
+09:32:53 07/06/10 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><AddBankAccountRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <emailAddress>pbehara-seller@paypal.com</emailAddress>
+    <bankCountryCode>US</bankCountryCode>
+    <bankName>Huntington Bank</bankName>
+    <routingNumber>021473030</routingNumber>
+    <bankAccountType>CHECKING</bankAccountType>
+    <bankAccountNumber>167906</bankAccountNumber>
+    <confirmationType>WEB</confirmationType>
+    <webOptions>
+        <returnUrl>http://localhost:8082/AddBankAccountDetails.php</returnUrl>
+        <cancelUrl>http://localhost:8082/AddBankAccount.php</cancelUrl>
+        <returnUrlDescription>returnurl</returnUrlDescription>
+        <cancelUrlDescription>cancelurl</cancelUrlDescription>
+    </webOptions>
+</AddBankAccountRequest></soap:Body>
+</soap:Envelope>
+
+09:32:54 07/06/10 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header /><soapenv:Body><soapenv:Fault xmlns:axis2ns570="http://schemas.xmlsoap.org/soap/envelope/"><faultcode>axis2ns570:Server</faultcode><faultstring>SOAP fault exception.</faultstring><detail><ns2:FaultMessage xmlns:ns2="http://svcs.paypal.com/types/common"><responseEnvelope><timestamp>2010-07-06T02:32:55.533-07:00</timestamp><ack>Failure</ack><correlationId>84e493299de30</correlationId><build>1365715</build></responseEnvelope><error><errorId>580022</errorId><domain>PLATFORM</domain><severity>Error</severity><category>Application</category><message>Invalid request parameter: emailAddress</message><parameter>emailAddress</parameter></error></ns2:FaultMessage></detail></soapenv:Fault></soapenv:Body></soapenv:Envelope>
+09:32:54 07/06/10 caller [info] #####SOAP#####
+09:32:54 07/06/10 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><AddBankAccountRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <emailAddress>testaccount767770@paypal.com</emailAddress>
+    <createAccountKey>AA-4WK94490BG236345B</createAccountKey>
+    <bankCountryCode>US</bankCountryCode>
+    <bankName>Huntington Bank</bankName>
+    <routingNumber>021473030</routingNumber>
+    <bankAccountType>CHECKING</bankAccountType>
+    <bankAccountNumber>166323</bankAccountNumber>
+    <confirmationType>NONE</confirmationType>
+    <webOptions>
+        <returnUrl>http://localhost:8082/AddBankAccountDetails.php</returnUrl>
+        <cancelUrl>http://localhost:8082/AddBankAccount.php</cancelUrl>
+        <returnUrlDescription>returnurl</returnUrlDescription>
+        <cancelUrlDescription>cancelurl</cancelUrlDescription>
+    </webOptions>
+</AddBankAccountRequest></soap:Body>
+</soap:Envelope>
+
+09:32:56 07/06/10 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header /><soapenv:Body><soapenv:Fault xmlns:axis2ns407="http://schemas.xmlsoap.org/soap/envelope/"><faultcode>axis2ns407:Server</faultcode><faultstring>Missing required request parameter: confirmationType</faultstring><detail><ns2:FaultMessage xmlns:ns2="http://svcs.paypal.com/types/common"><responseEnvelope><timestamp>2010-07-06T02:32:56.999-07:00</timestamp><ack>Failure</ack><correlationId>4f07ea969e3f0</correlationId><build>1365715</build></responseEnvelope><error><errorId>580029</errorId><domain>PLATFORM</domain><severity>Error</severity><category>Application</category><message>Missing required request parameter: confirmationType</message><parameter>confirmationType</parameter></error></ns2:FaultMessage></detail></soapenv:Fault></soapenv:Body></soapenv:Envelope>
+09:32:56 07/06/10 caller [info] #####SOAP#####
+09:32:56 07/06/10 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><AddPaymentCardRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <emailAddress>pbehara-seller@paypal.com</emailAddress>
+    <cardOwnerName>
+        <firstName>John</firstName>
+        <lastName>Deo</lastName>
+    </cardOwnerName>
+    <billingAddress>
+        <line1>1 Main St</line1>
+        <line2>2nd cross</line2>
+        <city>San Jose</city>
+        <state>CA</state>
+        <postalCode>95131</postalCode>
+        <countryCode>US</countryCode>
+    </billingAddress>
+    <cardNumber>4943871033202264</cardNumber>
+    <cardType>Visa</cardType>
+    <expirationDate>
+        <month>01</month>
+        <year>2014</year>
+    </expirationDate>
+    <confirmationType>WEB</confirmationType>
+    <webOptions>
+        <returnUrl>http://localhost:8082/AddPaymentCardDetails.php</returnUrl>
+        <cancelUrl>http://localhost:8082/AddPaymentCard.php</cancelUrl>
+        <returnUrlDescription>returnurl</returnUrlDescription>
+        <cancelUrlDescription>cancelurl</cancelUrlDescription>
+    </webOptions>
+</AddPaymentCardRequest></soap:Body>
+</soap:Envelope>
+
+09:32:57 07/06/10 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header /><soapenv:Body><soapenv:Fault xmlns:axis2ns351="http://schemas.xmlsoap.org/soap/envelope/"><faultcode>axis2ns351:Server</faultcode><faultstring>Service operation AddPaymentCard is unknown</faultstring>Internal server error. Please check the server logs for details
+09:32:57 07/06/10 caller [info] #####SOAP#####
+09:32:57 07/06/10 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><AddPaymentCardRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <emailAddress>testaccount182961@paypal.com</emailAddress>
+    <createAccountKey>AA-5GK89134EH833310T</createAccountKey>
+    <cardOwnerName>
+        <firstName>John</firstName>
+        <lastName>Deo</lastName>
+    </cardOwnerName>
+    <billingAddress>
+        <line1>1 Main St</line1>
+        <line2>2nd cross</line2>
+        <city>San Jose</city>
+        <state>CA</state>
+        <postalCode>95131</postalCode>
+        <countryCode>US</countryCode>
+    </billingAddress>
+    <cardNumber>4385123920793822</cardNumber>
+    <cardType>Visa</cardType>
+    <expirationDate>
+        <month>01</month>
+        <year>2014</year>
+    </expirationDate>
+    <cardVerificationNumber>956</cardVerificationNumber>
+    <confirmationType>NONE</confirmationType>
+</AddPaymentCardRequest></soap:Body>
+</soap:Envelope>
+
+09:32:59 07/06/10 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header /><soapenv:Body><soapenv:Fault xmlns:axis2ns418="http://schemas.xmlsoap.org/soap/envelope/"><faultcode>axis2ns418:Server</faultcode><faultstring>Service operation AddPaymentCard is unknown</faultstring>Internal server error. Please check the server logs for details
+09:32:59 07/06/10 caller [info] #####SOAP#####
+09:32:59 07/06/10 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><GetVerifiedStatusRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <emailAddress>platfo@paypal.com</emailAddress>
+    <matchCriteria>NAME</matchCriteria>
+    <firstName>Bonzop</firstName>
+    <lastName>Zaius</lastName>
+</GetVerifiedStatusRequest></soap:Body>
+</soap:Envelope>
+
+09:33:00 07/06/10 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header /><soapenv:Body><ns2:GetVerifiedStatusResponse xmlns:ns2="http://svcs.paypal.com/types/aa"><responseEnvelope><timestamp>2010-07-06T02:33:01.218-07:00</timestamp><ack>Success</ack><correlationId>8022676a9f39f</correlationId><build>1365715</build></responseEnvelope><accountStatus>UNVERIFIED</accountStatus></ns2:GetVerifiedStatusResponse></soapenv:Body></soapenv:Envelope>
+09:35:38 07/06/10 caller [info] #####SOAP#####
+09:35:38 07/06/10 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><CreateAccountRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <clientDetails>
+        <ipAddress>127.0.0.1</ipAddress>
+        <deviceId>PayPal_PHP_SDK</deviceId>
+        <applicationId>APP-80W284485P519543T</applicationId>
+    </clientDetails>
+    <accountType>PERSONAL</accountType>
+    <name>
+        <salutation>Dr.</salutation>
+        <firstName>Bonzop</firstName>
+        <middleName>Simore</middleName>
+        <lastName>Zaius</lastName>
+    </name>
+    <dateOfBirth>1968-01-01</dateOfBirth>
+    <address>
+        <line1>1968 Ape Way</line1>
+        <line2>Apt 123</line2>
+        <city>Austin</city>
+        <state>TX</state>
+        <postalCode>78750</postalCode>
+        <countryCode>US</countryCode>
+    </address>
+    <contactPhoneNumber>512-691-4160</contactPhoneNumber>
+    <currencyCode>USD</currencyCode>
+    <citizenshipCountryCode>US</citizenshipCountryCode>
+    <preferredLanguageCode>en_US</preferredLanguageCode>
+    <notificationURL>http://stranger.paypal.com/cgi-bin/ipntest.cgi</notificationURL>
+    <emailAddress>testaccount253141@paypal.com</emailAddress>
+    <registrationType>WEB</registrationType>
+    <partnerField1>p1</partnerField1>
+    <partnerField2>p2</partnerField2>
+    <partnerField3>p3</partnerField3>
+    <partnerField4>p4</partnerField4>
+    <partnerField5>p5</partnerField5>
+    <sandboxEmailAddress>Platform.sdk.seller@gmail.com</sandboxEmailAddress>
+</CreateAccountRequest></soap:Body>
+</soap:Envelope>
+
+09:35:43 07/06/10 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header /><soapenv:Body><ns2:CreateAccountResponse xmlns:ns2="http://svcs.paypal.com/types/aa"><responseEnvelope><timestamp>2010-07-06T02:35:43.827-07:00</timestamp><ack>Success</ack><correlationId>6bec3f4bc6792</correlationId><build>1365715</build></responseEnvelope><createAccountKey>AA-8LA53120VT9609824</createAccountKey><execStatus>COMPLETED</execStatus><redirectURL>https://www.sandbox.paypal.com/us/cgi-bin/webscr?cmd=_hostedua-flow&amp;encrypted_second_auth_code=AwXf-eaSmmlAhVe8RiWtAautAtIAwz82-CnOHjZxD5A-Nbf-xks46uhqu-FW4h9Ztu8&amp;encrypted_id=ENAXAXRFBX8G2</redirectURL></ns2:CreateAccountResponse></soapenv:Body></soapenv:Envelope>
+09:35:43 07/06/10 caller [info] #####SOAP#####
+09:35:43 07/06/10 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><CreateAccountRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <clientDetails>
+        <ipAddress>127.0.0.1</ipAddress>
+        <applicationId>APP-80W284485P519543T</applicationId>
+    </clientDetails>
+    <accountType>BUSINESS</accountType>
+    <name>
+        <salutation>Dr.</salutation>
+        <firstName>Bonzop</firstName>
+        <middleName>Simore</middleName>
+        <lastName>Zaius</lastName>
+    </name>
+    <dateOfBirth>1968-01-01</dateOfBirth>
+    <address>
+        <line1>1968 Ape Way</line1>
+        <line2>Apt 123</line2>
+        <city>Austin</city>
+        <state>TX</state>
+        <postalCode>78750</postalCode>
+        <countryCode>US</countryCode>
+    </address>
+    <contactPhoneNumber>512-691-4160</contactPhoneNumber>
+    <currencyCode>USD</currencyCode>
+    <citizenshipCountryCode>US</citizenshipCountryCode>
+    <preferredLanguageCode>en_US</preferredLanguageCode>
+    <notificationURL>http://stranger.paypal.com/cgi-bin/ipntest.cgi</notificationURL>
+    <emailAddress>testaccount63017@paypal.com</emailAddress>
+    <registrationType>WEB</registrationType>
+    <createAccountWebOptions />
+    <partnerField1>p1</partnerField1>
+    <partnerField2>p2</partnerField2>
+    <partnerField3>p3</partnerField3>
+    <partnerField4>p4</partnerField4>
+    <partnerField5>p5</partnerField5>
+    <businessInfo>
+        <businessName>Bonzop</businessName>
+        <businessAddress>
+            <line1>1968 Ape Way</line1>
+            <line2>Apt 123</line2>
+            <city>Austin</city>
+            <state>TX</state>
+            <postalCode>78750</postalCode>
+            <countryCode>US</countryCode>
+        </businessAddress>
+        <workPhone>512-691-4160</workPhone>
+        <category>1001</category>
+        <subCategory>2002</subCategory>
+        <customerServicePhone>512-691-4160</customerServicePhone>
+        <customerServiceEmail>testaccount162883@paypal.com</customerServiceEmail>
+        <webSite>https://www.x.com</webSite>
+        <dateOfEstablishment>1968-01-01</dateOfEstablishment>
+        <businessType>INDIVIDUAL</businessType>
+        <averagePrice>100</averagePrice>
+        <averageMonthlyVolume>100</averageMonthlyVolume>
+        <percentageRevenueFromOnline>100</percentageRevenueFromOnline>
+        <salesVenue>WEB</salesVenue>
+    </businessInfo>
+    <sandboxEmailAddress>Platform.sdk.seller@gmail.com</sandboxEmailAddress>
+</CreateAccountRequest></soap:Body>
+</soap:Envelope>
+
+09:36:05 07/06/10 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header /><soapenv:Body><ns2:CreateAccountResponse xmlns:ns2="http://svcs.paypal.com/types/aa"><responseEnvelope><timestamp>2010-07-06T02:35:49.593-07:00</timestamp><ack>Success</ack><correlationId>5643eddfc7647</correlationId><build>1365715</build></responseEnvelope><createAccountKey>AA-3D234926G6468210L</createAccountKey><execStatus>COMPLETED</execStatus><redirectURL>https://www.sandbox.paypal.com/us/cgi-bin/webscr?cmd=_hostedua-flow&amp;encrypted_second_auth_code=AgC8xcg62z-IcSe8qnwZdBZrV-F7rPJQxhbmgx18BkgBUalC.nV8SInM20X9N1KbyZ0&amp;encrypted_id=LG7JZJSDGA37E</redirectURL></ns2:CreateAccountResponse></soapenv:Body></soapenv:Envelope>
+09:36:05 07/06/10 caller [info] #####SOAP#####
+09:36:05 07/06/10 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><AddBankAccountRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <emailAddress>pbehara-seller@paypal.com</emailAddress>
+    <bankCountryCode>US</bankCountryCode>
+    <bankName>Huntington Bank</bankName>
+    <routingNumber>021473030</routingNumber>
+    <bankAccountType>CHECKING</bankAccountType>
+    <bankAccountNumber>161291</bankAccountNumber>
+    <confirmationType>WEB</confirmationType>
+    <webOptions>
+        <returnUrl>http://localhost:8082/AddBankAccountDetails.php</returnUrl>
+        <cancelUrl>http://localhost:8082/AddBankAccount.php</cancelUrl>
+        <returnUrlDescription>returnurl</returnUrlDescription>
+        <cancelUrlDescription>cancelurl</cancelUrlDescription>
+    </webOptions>
+</AddBankAccountRequest></soap:Body>
+</soap:Envelope>
+
+09:36:07 07/06/10 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header /><soapenv:Body><soapenv:Fault xmlns:axis2ns419="http://schemas.xmlsoap.org/soap/envelope/"><faultcode>axis2ns419:Server</faultcode><faultstring>SOAP fault exception.</faultstring><detail><ns2:FaultMessage xmlns:ns2="http://svcs.paypal.com/types/common"><responseEnvelope><timestamp>2010-07-06T02:36:08.023-07:00</timestamp><ack>Failure</ack><correlationId>c649b60bcce11</correlationId><build>1365715</build></responseEnvelope><error><errorId>580022</errorId><domain>PLATFORM</domain><severity>Error</severity><category>Application</category><message>Invalid request parameter: emailAddress</message><parameter>emailAddress</parameter></error></ns2:FaultMessage></detail></soapenv:Fault></soapenv:Body></soapenv:Envelope>
+09:36:07 07/06/10 caller [info] #####SOAP#####
+09:36:07 07/06/10 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><AddBankAccountRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <emailAddress>testaccount253141@paypal.com</emailAddress>
+    <createAccountKey>AA-8LA53120VT9609824</createAccountKey>
+    <bankCountryCode>US</bankCountryCode>
+    <bankName>Huntington Bank</bankName>
+    <routingNumber>021473030</routingNumber>
+    <bankAccountType>CHECKING</bankAccountType>
+    <bankAccountNumber>169418</bankAccountNumber>
+    <confirmationType>NONE</confirmationType>
+    <webOptions>
+        <returnUrl>http://localhost:8082/AddBankAccountDetails.php</returnUrl>
+        <cancelUrl>http://localhost:8082/AddBankAccount.php</cancelUrl>
+        <returnUrlDescription>returnurl</returnUrlDescription>
+        <cancelUrlDescription>cancelurl</cancelUrlDescription>
+    </webOptions>
+</AddBankAccountRequest></soap:Body>
+</soap:Envelope>
+
+09:36:08 07/06/10 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header /><soapenv:Body><soapenv:Fault xmlns:axis2ns572="http://schemas.xmlsoap.org/soap/envelope/"><faultcode>axis2ns572:Server</faultcode><faultstring>Missing required request parameter: confirmationType</faultstring><detail><ns2:FaultMessage xmlns:ns2="http://svcs.paypal.com/types/common"><responseEnvelope><timestamp>2010-07-06T02:36:09.683-07:00</timestamp><ack>Failure</ack><correlationId>a57c2db1cd4ab</correlationId><build>1365715</build></responseEnvelope><error><errorId>580029</errorId><domain>PLATFORM</domain><severity>Error</severity><category>Application</category><message>Missing required request parameter: confirmationType</message><parameter>confirmationType</parameter></error></ns2:FaultMessage></detail></soapenv:Fault></soapenv:Body></soapenv:Envelope>
+09:36:08 07/06/10 caller [info] #####SOAP#####
+09:36:08 07/06/10 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><AddPaymentCardRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <emailAddress>pbehara-seller@paypal.com</emailAddress>
+    <cardOwnerName>
+        <firstName>John</firstName>
+        <lastName>Deo</lastName>
+    </cardOwnerName>
+    <billingAddress>
+        <line1>1 Main St</line1>
+        <line2>2nd cross</line2>
+        <city>San Jose</city>
+        <state>CA</state>
+        <postalCode>95131</postalCode>
+        <countryCode>US</countryCode>
+    </billingAddress>
+    <cardNumber>4943871033202264</cardNumber>
+    <cardType>Visa</cardType>
+    <expirationDate>
+        <month>01</month>
+        <year>2014</year>
+    </expirationDate>
+    <confirmationType>WEB</confirmationType>
+    <webOptions>
+        <returnUrl>http://localhost:8082/AddPaymentCardDetails.php</returnUrl>
+        <cancelUrl>http://localhost:8082/AddPaymentCard.php</cancelUrl>
+        <returnUrlDescription>returnurl</returnUrlDescription>
+        <cancelUrlDescription>cancelurl</cancelUrlDescription>
+    </webOptions>
+</AddPaymentCardRequest></soap:Body>
+</soap:Envelope>
+
+09:36:10 07/06/10 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header /><soapenv:Body><soapenv:Fault xmlns:axis2ns408="http://schemas.xmlsoap.org/soap/envelope/"><faultcode>axis2ns408:Server</faultcode><faultstring>Service operation AddPaymentCard is unknown</faultstring>Internal server error. Please check the server logs for details
+09:36:10 07/06/10 caller [info] #####SOAP#####
+09:36:10 07/06/10 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><AddPaymentCardRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <emailAddress>testaccount63017@paypal.com</emailAddress>
+    <createAccountKey>AA-3D234926G6468210L</createAccountKey>
+    <cardOwnerName>
+        <firstName>John</firstName>
+        <lastName>Deo</lastName>
+    </cardOwnerName>
+    <billingAddress>
+        <line1>1 Main St</line1>
+        <line2>2nd cross</line2>
+        <city>San Jose</city>
+        <state>CA</state>
+        <postalCode>95131</postalCode>
+        <countryCode>US</countryCode>
+    </billingAddress>
+    <cardNumber>4715046456278606</cardNumber>
+    <cardType>Visa</cardType>
+    <expirationDate>
+        <month>01</month>
+        <year>2014</year>
+    </expirationDate>
+    <cardVerificationNumber>956</cardVerificationNumber>
+    <confirmationType>NONE</confirmationType>
+</AddPaymentCardRequest></soap:Body>
+</soap:Envelope>
+
+09:36:12 07/06/10 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header /><soapenv:Body><soapenv:Fault xmlns:axis2ns352="http://schemas.xmlsoap.org/soap/envelope/"><faultcode>axis2ns352:Server</faultcode><faultstring>Service operation AddPaymentCard is unknown</faultstring>Internal server error. Please check the server logs for details
+09:36:12 07/06/10 caller [info] #####SOAP#####
+09:36:12 07/06/10 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><GetVerifiedStatusRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <emailAddress>platfo@paypal.com</emailAddress>
+    <matchCriteria>NAME</matchCriteria>
+    <firstName>Bonzop</firstName>
+    <lastName>Zaius</lastName>
+</GetVerifiedStatusRequest></soap:Body>
+</soap:Envelope>
+
+09:36:13 07/06/10 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header /><soapenv:Body><ns2:GetVerifiedStatusResponse xmlns:ns2="http://svcs.paypal.com/types/aa"><responseEnvelope><timestamp>2010-07-06T02:36:14.329-07:00</timestamp><ack>Success</ack><correlationId>5f33c264ce631</correlationId><build>1365715</build></responseEnvelope><accountStatus>UNVERIFIED</accountStatus></ns2:GetVerifiedStatusResponse></soapenv:Body></soapenv:Envelope>
+09:37:56 07/06/10 caller [info] #####SOAP#####
+09:37:56 07/06/10 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><CreateAccountRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <clientDetails>
+        <ipAddress>127.0.0.1</ipAddress>
+        <deviceId>PayPal_PHP_SDK</deviceId>
+        <applicationId>APP-80W284485P519543T</applicationId>
+    </clientDetails>
+    <accountType>PERSONAL</accountType>
+    <name>
+        <salutation>Dr.</salutation>
+        <firstName>Bonzop</firstName>
+        <middleName>Simore</middleName>
+        <lastName>Zaius</lastName>
+    </name>
+    <dateOfBirth>1968-01-01</dateOfBirth>
+    <address>
+        <line1>1968 Ape Way</line1>
+        <line2>Apt 123</line2>
+        <city>Austin</city>
+        <state>TX</state>
+        <postalCode>78750</postalCode>
+        <countryCode>US</countryCode>
+    </address>
+    <contactPhoneNumber>512-691-4160</contactPhoneNumber>
+    <currencyCode>USD</currencyCode>
+    <citizenshipCountryCode>US</citizenshipCountryCode>
+    <preferredLanguageCode>en_US</preferredLanguageCode>
+    <notificationURL>http://stranger.paypal.com/cgi-bin/ipntest.cgi</notificationURL>
+    <emailAddress>testaccount987874@paypal.com</emailAddress>
+    <registrationType>WEB</registrationType>
+    <partnerField1>p1</partnerField1>
+    <partnerField2>p2</partnerField2>
+    <partnerField3>p3</partnerField3>
+    <partnerField4>p4</partnerField4>
+    <partnerField5>p5</partnerField5>
+    <sandboxEmailAddress>Platform.sdk.seller@gmail.com</sandboxEmailAddress>
+</CreateAccountRequest></soap:Body>
+</soap:Envelope>
+
+09:38:01 07/06/10 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header /><soapenv:Body><ns2:CreateAccountResponse xmlns:ns2="http://svcs.paypal.com/types/aa"><responseEnvelope><timestamp>2010-07-06T02:38:01.801-07:00</timestamp><ack>Success</ack><correlationId>fd5016efe818e</correlationId><build>1365715</build></responseEnvelope><createAccountKey>AA-00753338R68518144</createAccountKey><execStatus>COMPLETED</execStatus><redirectURL>https://www.sandbox.paypal.com/us/cgi-bin/webscr?cmd=_hostedua-flow&amp;encrypted_second_auth_code=AgHgKlW696Ol2u.rEgszvWLmHP8VvGKHlsh-0UrRWNgSadxOuAHMeMo1IcdQGQnt3ik&amp;encrypted_id=B827FW4W8NJC8</redirectURL></ns2:CreateAccountResponse></soapenv:Body></soapenv:Envelope>
+09:38:01 07/06/10 caller [info] #####SOAP#####
+09:38:01 07/06/10 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><CreateAccountRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <clientDetails>
+        <ipAddress>127.0.0.1</ipAddress>
+        <applicationId>APP-80W284485P519543T</applicationId>
+    </clientDetails>
+    <accountType>BUSINESS</accountType>
+    <name>
+        <salutation>Dr.</salutation>
+        <firstName>Bonzop</firstName>
+        <middleName>Simore</middleName>
+        <lastName>Zaius</lastName>
+    </name>
+    <dateOfBirth>1968-01-01</dateOfBirth>
+    <address>
+        <line1>1968 Ape Way</line1>
+        <line2>Apt 123</line2>
+        <city>Austin</city>
+        <state>TX</state>
+        <postalCode>78750</postalCode>
+        <countryCode>US</countryCode>
+    </address>
+    <contactPhoneNumber>512-691-4160</contactPhoneNumber>
+    <currencyCode>USD</currencyCode>
+    <citizenshipCountryCode>US</citizenshipCountryCode>
+    <preferredLanguageCode>en_US</preferredLanguageCode>
+    <notificationURL>http://stranger.paypal.com/cgi-bin/ipntest.cgi</notificationURL>
+    <emailAddress>testaccount11368@paypal.com</emailAddress>
+    <registrationType>WEB</registrationType>
+    <createAccountWebOptions />
+    <partnerField1>p1</partnerField1>
+    <partnerField2>p2</partnerField2>
+    <partnerField3>p3</partnerField3>
+    <partnerField4>p4</partnerField4>
+    <partnerField5>p5</partnerField5>
+    <businessInfo>
+        <businessName>Bonzop</businessName>
+        <businessAddress>
+            <line1>1968 Ape Way</line1>
+            <line2>Apt 123</line2>
+            <city>Austin</city>
+            <state>TX</state>
+            <postalCode>78750</postalCode>
+            <countryCode>US</countryCode>
+        </businessAddress>
+        <workPhone>512-691-4160</workPhone>
+        <category>1001</category>
+        <subCategory>2002</subCategory>
+        <customerServicePhone>512-691-4160</customerServicePhone>
+        <customerServiceEmail>testaccount111234@paypal.com</customerServiceEmail>
+        <webSite>https://www.x.com</webSite>
+        <dateOfEstablishment>1968-01-01</dateOfEstablishment>
+        <businessType>INDIVIDUAL</businessType>
+        <averagePrice>100</averagePrice>
+        <averageMonthlyVolume>100</averageMonthlyVolume>
+        <percentageRevenueFromOnline>100</percentageRevenueFromOnline>
+        <salesVenue>WEB</salesVenue>
+    </businessInfo>
+    <sandboxEmailAddress>Platform.sdk.seller@gmail.com</sandboxEmailAddress>
+</CreateAccountRequest></soap:Body>
+</soap:Envelope>
+
+09:38:06 07/06/10 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header /><soapenv:Body><ns2:CreateAccountResponse xmlns:ns2="http://svcs.paypal.com/types/aa"><responseEnvelope><timestamp>2010-07-06T02:38:07.426-07:00</timestamp><ack>Success</ack><correlationId>4cd13a67e910b</correlationId><build>1365715</build></responseEnvelope><createAccountKey>AA-5VX38394677457927</createAccountKey><execStatus>COMPLETED</execStatus><redirectURL>https://www.sandbox.paypal.com/us/cgi-bin/webscr?cmd=_hostedua-flow&amp;encrypted_second_auth_code=AwWFaSsznVLRlsqjeUnCTCB9iRc2dTqlBDYEoBcgOiRr6JYg3aFnYmonth6bbs0AG14&amp;encrypted_id=26ZC3ACJQR494</redirectURL></ns2:CreateAccountResponse></soapenv:Body></soapenv:Envelope>
+09:38:06 07/06/10 caller [info] #####SOAP#####
+09:38:06 07/06/10 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><AddBankAccountRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <emailAddress>pbehara-seller@paypal.com</emailAddress>
+    <bankCountryCode>US</bankCountryCode>
+    <bankName>Huntington Bank</bankName>
+    <routingNumber>021473030</routingNumber>
+    <bankAccountType>CHECKING</bankAccountType>
+    <bankAccountNumber>163103</bankAccountNumber>
+    <confirmationType>WEB</confirmationType>
+    <webOptions>
+        <returnUrl>http://localhost:8082/AddBankAccountDetails.php</returnUrl>
+        <cancelUrl>http://localhost:8082/AddBankAccount.php</cancelUrl>
+        <returnUrlDescription>returnurl</returnUrlDescription>
+        <cancelUrlDescription>cancelurl</cancelUrlDescription>
+    </webOptions>
+</AddBankAccountRequest></soap:Body>
+</soap:Envelope>
+
+09:38:08 07/06/10 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header /><soapenv:Body><soapenv:Fault xmlns:axis2ns353="http://schemas.xmlsoap.org/soap/envelope/"><faultcode>axis2ns353:Server</faultcode><faultstring>SOAP fault exception.</faultstring><detail><ns2:FaultMessage xmlns:ns2="http://svcs.paypal.com/types/common"><responseEnvelope><timestamp>2010-07-06T02:38:08.79-07:00</timestamp><ack>Failure</ack><correlationId>de115c54ea5e3</correlationId><build>1365715</build></responseEnvelope><error><errorId>580022</errorId><domain>PLATFORM</domain><severity>Error</severity><category>Application</category><message>Invalid request parameter: emailAddress</message><parameter>emailAddress</parameter></error></ns2:FaultMessage></detail></soapenv:Fault></soapenv:Body></soapenv:Envelope>
+09:38:08 07/06/10 caller [info] #####SOAP#####
+09:38:08 07/06/10 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><AddBankAccountRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <emailAddress>testaccount987874@paypal.com</emailAddress>
+    <createAccountKey>AA-00753338R68518144</createAccountKey>
+    <bankCountryCode>US</bankCountryCode>
+    <bankName>Huntington Bank</bankName>
+    <routingNumber>021473030</routingNumber>
+    <bankAccountType>CHECKING</bankAccountType>
+    <bankAccountNumber>169374</bankAccountNumber>
+    <confirmationType>NONE</confirmationType>
+    <webOptions>
+        <returnUrl>http://localhost:8082/AddBankAccountDetails.php</returnUrl>
+        <cancelUrl>http://localhost:8082/AddBankAccount.php</cancelUrl>
+        <returnUrlDescription>returnurl</returnUrlDescription>
+        <cancelUrlDescription>cancelurl</cancelUrlDescription>
+    </webOptions>
+</AddBankAccountRequest></soap:Body>
+</soap:Envelope>
+
+09:38:13 07/06/10 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header /><soapenv:Body><soapenv:Fault xmlns:axis2ns420="http://schemas.xmlsoap.org/soap/envelope/"><faultcode>axis2ns420:Server</faultcode><faultstring>Missing required request parameter: confirmationType</faultstring><detail><ns2:FaultMessage xmlns:ns2="http://svcs.paypal.com/types/common"><responseEnvelope><timestamp>2010-07-06T02:38:10.455-07:00</timestamp><ack>Failure</ack><correlationId>cbb7f20ceac63</correlationId><build>1365715</build></responseEnvelope><error><errorId>580029</errorId><domain>PLATFORM</domain><severity>Error</severity><category>Application</category><message>Missing required request parameter: confirmationType</message><parameter>confirmationType</parameter></error></ns2:FaultMessage></detail></soapenv:Fault></soapenv:Body></soapenv:Envelope>
+09:38:13 07/06/10 caller [info] #####SOAP#####
+09:38:13 07/06/10 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><AddPaymentCardRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <emailAddress>pbehara-seller@paypal.com</emailAddress>
+    <cardOwnerName>
+        <firstName>John</firstName>
+        <lastName>Deo</lastName>
+    </cardOwnerName>
+    <billingAddress>
+        <line1>1 Main St</line1>
+        <line2>2nd cross</line2>
+        <city>San Jose</city>
+        <state>CA</state>
+        <postalCode>95131</postalCode>
+        <countryCode>US</countryCode>
+    </billingAddress>
+    <cardNumber>4943871033202264</cardNumber>
+    <cardType>Visa</cardType>
+    <expirationDate>
+        <month>01</month>
+        <year>2014</year>
+    </expirationDate>
+    <confirmationType>WEB</confirmationType>
+    <webOptions>
+        <returnUrl>http://localhost:8082/AddPaymentCardDetails.php</returnUrl>
+        <cancelUrl>http://localhost:8082/AddPaymentCard.php</cancelUrl>
+        <returnUrlDescription>returnurl</returnUrlDescription>
+        <cancelUrlDescription>cancelurl</cancelUrlDescription>
+    </webOptions>
+</AddPaymentCardRequest></soap:Body>
+</soap:Envelope>
+
+09:38:14 07/06/10 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header /><soapenv:Body><soapenv:Fault xmlns:axis2ns573="http://schemas.xmlsoap.org/soap/envelope/"><faultcode>axis2ns573:Server</faultcode><faultstring>Service operation AddPaymentCard is unknown</faultstring>Internal server error. Please check the server logs for details
+09:38:14 07/06/10 caller [info] #####SOAP#####
+09:38:14 07/06/10 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><AddPaymentCardRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <emailAddress>testaccount11368@paypal.com</emailAddress>
+    <createAccountKey>AA-5VX38394677457927</createAccountKey>
+    <cardOwnerName>
+        <firstName>John</firstName>
+        <lastName>Deo</lastName>
+    </cardOwnerName>
+    <billingAddress>
+        <line1>1 Main St</line1>
+        <line2>2nd cross</line2>
+        <city>San Jose</city>
+        <state>CA</state>
+        <postalCode>95131</postalCode>
+        <countryCode>US</countryCode>
+    </billingAddress>
+    <cardNumber>4350527772764825</cardNumber>
+    <cardType>Visa</cardType>
+    <expirationDate>
+        <month>01</month>
+        <year>2014</year>
+    </expirationDate>
+    <cardVerificationNumber>956</cardVerificationNumber>
+    <confirmationType>NONE</confirmationType>
+</AddPaymentCardRequest></soap:Body>
+</soap:Envelope>
+
+09:38:16 07/06/10 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header /><soapenv:Body><soapenv:Fault xmlns:axis2ns409="http://schemas.xmlsoap.org/soap/envelope/"><faultcode>axis2ns409:Server</faultcode><faultstring>Service operation AddPaymentCard is unknown</faultstring>Internal server error. Please check the server logs for details
+09:38:16 07/06/10 caller [info] #####SOAP#####
+09:38:16 07/06/10 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><GetVerifiedStatusRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <emailAddress>platfo@paypal.com</emailAddress>
+    <matchCriteria>NAME</matchCriteria>
+    <firstName>Bonzop</firstName>
+    <lastName>Zaius</lastName>
+</GetVerifiedStatusRequest></soap:Body>
+</soap:Envelope>
+
+09:38:19 07/06/10 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header /><soapenv:Body><ns2:GetVerifiedStatusResponse xmlns:ns2="http://svcs.paypal.com/types/aa"><responseEnvelope><timestamp>2010-07-06T02:38:20.302-07:00</timestamp><ack>Success</ack><correlationId>900e46a3ed26b</correlationId><build>1365715</build></responseEnvelope><accountStatus>UNVERIFIED</accountStatus></ns2:GetVerifiedStatusResponse></soapenv:Body></soapenv:Envelope>
