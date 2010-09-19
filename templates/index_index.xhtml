@@ -6,21 +6,60 @@
 <div id="col_1" class="col">
 	<h3>Challenges</h3>
 
+	<a class="homepage_challenge"><span>link</span></a>
+	<a class="homepage_challenge"><span>link</span></a>
+	<a class="homepage_challenge"><span>link</span></a>
+	<a class="homepage_challenge"><span>link</span></a>
+	<a class="homepage_challenge"><span>link</span></a>
 	
 </div>
 <div id="col_2" class="col">
-	<h3>Challenges</h3>
+	<h3>Companies</h3>
 	
-	<a class="homepage_challenge"><span>link</span></a>
-	<a class="homepage_challenge"><span>link</span></a>
-	<a class="homepage_challenge"><span>link</span></a>
+	<a class="homepage_challenge_alt"><span>link</span></a>
+	<a class="homepage_challenge_alt"><span>link</span></a>
+	<a class="homepage_challenge_alt"><span>link</span></a>
+	<a class="homepage_challenge_alt"><span>link</span></a>
+	<a class="homepage_challenge_alt"><span>link</span></a>
 	
 </div>
 <div id="col_3" class="col">
-	<h3>Challenges</h3>
+	<h3>Latest from twiter</h3>
+	<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+	<script>
+	new TWTR.Widget({
+	  version: 2,
+	  type: 'search',
+	  search: '#charityhack',
+	  interval: 6000,
+	  title: '',
+	  subject: '',
+	  width: 'auto',
+	  height: 300,
+	  theme: {
+	    shell: {
+	      background: '#a61e09',
+	      color: '#ffffff'
+	    },
+	    tweets: {
+	      background: '#ffffff',
+	      color: '#444444',
+	      links: '#1985b5'
+	    }
+	  },
+	  features: {
+	    scrollbar: false,
+	    loop: true,
+	    live: true,
+	    hashtags: true,
+	    timestamp: true,
+	    avatars: true,
+	    toptweets: true,
+	    behavior: 'default'
+	  }
+	}).render().start();
+	</script>
 </div>
-
-<a href="/paypal/test">Paypal whatever</a>
 
 <hr/>
 

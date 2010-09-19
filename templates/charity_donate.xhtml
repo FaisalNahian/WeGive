@@ -2,12 +2,14 @@
 
 <p>${challenger/screen_name} challenged his/her friends (including you!) to donate ${challenge/goal_pounds}. He/she already donated ${challenge/base_donation_pounds}!</p>
 
+<form action="/paypal/donate_challenge/${challenge/id}">
+    
 <div tal:repeat="value_pence php:array(500,1000,2000,5000,10000)">
-    <input type="radio" name="value_pence"/>
-     Donate ${php:to_pounds(value_pence)} and if goal is reached ${challenger/screen_name} will donate <em>additional</em> ${php:challenge.match_per_pence(value_pence)}!
+    <label><input type="radio" name="value_pence"/>
+     Donate ${php:to_pounds(value_pence)} and if goal is reached ${challenger/screen_name} will donate <em>additional</em> ${php:challenge.match_per_pence(value_pence)}!</label>
       </div>
       
       <p><em>And</em> if all donations reach ${challenge/goal_pounds}, sponsor FIXME will donate extra ${challenge/goal_pounds}!</p>
      
      <input type="submit" value="Donate with MissionFish/PayPal"/>
-     
+     </form>

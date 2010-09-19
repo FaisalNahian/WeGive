@@ -1,2 +1,12 @@
 
 <tal:block metal:use-macro="charity.xhtml/charity"/>
+
+<h2>People supporting charity:</h2>
+<ul>
+    <li tal:repeat="challenge php:charity.challenges">
+        <a href="/user/show/${follower/id}" tal:define="follower php:challenge.user">
+	        <img src="${follower/profile_image_url}" alt="${follower/screen_name}" title="${follower/screen_name}" />
+	    </a>
+	    
+    </li>
+</ul>

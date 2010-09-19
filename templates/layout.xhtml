@@ -13,9 +13,9 @@
 			<a tal:condition="not:current_user" href="/twitter/login" id="twiter_signin"><span>sign in on twitter</span></a>	
 			
 			<ul id="main_nav">
-				<li><a href="/charity/listing">Charities</a></li>
-				<li><a href="/">text link</a></li>
-				<li class="active"><a href="/twitter/login">text link</a></li>
+				<li class="home"><a href="/">Home</a></li>
+				<li class="donate"><a href="/charity/listing">Donate</a></li>
+				<li><a href="/charity/listing">Set challenge</a></li>
 			</ul>					
 			
 			<!-- logged in -->
@@ -27,17 +27,16 @@
 		
 		<div id="sub_nav">
 			<ul>
-				<li><a href="/">link</a></li>
-				<li><a href="/">link</a></li>
-				<li><a href="/">link</a></li>
-				<li><a href="/">link</a></li>
+				<li><a href="/charity/challenge">Challenges</a></li>
+				<li><a href="/charity/challenge">Charities</a></li>
+				<li><a href="/charity/challenge">Companies</a></li>
+				<li><a href="/charity/challenge">People</a></li>
 			</ul>
 		</div>
 		
 		
 		<div id="content">
 		    <div id="sidebar" tal:condition="not:true:hide_sidebar">
-		        THIS IS SIDEBAAAR
 		        <!-- put sidebar here? -->
 		    </div>    
         <?php $ctx->content_phptal->echoExecute(); ?>

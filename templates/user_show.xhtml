@@ -2,11 +2,11 @@
 
 <div id="bio_friends">
 	<h4>Profile</h4>
-	<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and fe
+	<p>Web/UI designer with a passion for accessible pies and semantic cocktails.
 	</p>
 	<div id="followers" tal:condition="user/followers_available">
 	    <tal:block tal:define="followers user/get_followers">
-	    <h4>Challenges by your friends</h4>
+	    <h4>Your friends on We Give</h4>
 	    <tal:block tal:repeat="follower followers">
     	    <a href="/user/show/${follower/id}" tal:condition="follower/has_active_challenge">
     	        <img src="${follower/profile_image_url}" alt="${follower/screen_name}" title="${follower/screen_name}" />
@@ -32,11 +32,11 @@
 			
 			<div class="active_bointie" tal:repeat="challenge challenges">
 			    <tal:block tal:define="charity php:challenge.charity">
-			        <h3 tal:content="charity/name" />
+			        <h3><a href="/charity/show/${charity/id}" tal:content="charity/name" /></h3>
     				<div class="bar_container">
     					<div class="bar" style="width:100px;"></div>
     				</div>
-    				<p>If ${user/screen_name}'s friends donate ${challenge/goal_pounds}, he/she will donate another ${challenge/match_pounds}.</p>
+    				<p>${user/screen_name} already donated ${challenge/base_donation_pounds} and will donate additional ${challenge/match_pounds} if his/her fiends raise ${challenge/goal_pounds}.</p>
     				
     				<a href="/charity/donate/${challenge/id}" class="donate_button">Donate</a>
 			    </tal:block>

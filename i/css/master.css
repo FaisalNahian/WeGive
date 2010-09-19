@@ -112,7 +112,8 @@ h5 {
 	background-color: #C14A39;
 }
 
-#main_nav li.active,
+.index_section #main_nav li.home,
+.charity_section #main_nav li.donate,
 #setting li.active {
 	background-color: #ffffff;
 }
@@ -128,7 +129,8 @@ h5 {
 	letter-spacing: 0.1em;
 }
 
-#main_nav li.active a,
+.index_section #main_nav li.home a,
+.charity_section #main_nav li.donate a,
 #setting li.active a {
 	color: #B21F0A;
 }
@@ -145,9 +147,15 @@ h5 {
 }
 
 #sub_nav {
+	display: none;
+}
+
+.charity_section #sub_nav {
 	float: left;
 	width: 994px;
 	background-color: #ffffff;
+	padding: 8px 0;
+	display: block;
 }
 
 #sub_nav ul {
@@ -284,11 +292,11 @@ h5 {
 	float: left;
 	width: 304px;
 	background-color: #da3b25;
-	color: #333333;
+	color: #ffffff;
 }
 
 #bio_friends h4 {
-	font-size: 16px;
+	font-size: 18px;
 }
 
 #bio_friends h4,
@@ -360,6 +368,12 @@ h5 {
 	
 }
 
+.col h3 {
+	margin: 0.5em 0;
+	letter-spacing: 0.1em;
+}
+
+
 .homepage_challenge {
 	float: left;
 	width: 305px;
@@ -369,7 +383,17 @@ h5 {
 	background-image: url(../img/item-fake.jpg);
 }
 
-.homepage_challenge span {
+.homepage_challenge_alt {
+	float: left;
+	width: 305px;
+	height: 71px;
+	display: block;
+	margin: 0 0 0 0;
+	background-image: url(../img/company-item.jpg);
+}
+
+.homepage_challenge span,
+.homepage_challenge_alt span {
 	display: none;
 }
 
@@ -389,15 +413,95 @@ h5 {
 	background-image: url(../img/home-feature-bg.jpg);
 }
 
+.donate_page #content {
+	background-color: #ffffff;
+	color: #333333;
+}
+
+.donate_page #content * {
+	margin: 8px 0 8px 16px;
+}
+
 /* @group added code */
 
-.index_page #sub_nav {display:none;}
-.itemWrap {padding:1em; background:#fff; overflow:hidden; -moz-box-shadow: 3px 3px 4px #000; -webkit-box-shadow: 3px 3px 4px #000; box-shadow: 3px 3px 4px #000;}
+.itemWrap {padding:1em; background:#fff; overflow:hidden; -moz-box-shadow: 3px 3px 4px #000; -webkit-box-shadow: 3px 3px 4px #000; box-shadow: 3px 3px 4px #000;
+margin: 0 0 12px 0;}
 .itemList {padding:1em 0;}
 .itemList {list-style-type:none;}
 .itemInfo {overflow:hidden;}
-.itemInfo .itemTitle { color:#333; font-size:14px; font-weight:bold; text-decoration:none;}
+.itemInfo .itemTitle { color:#333; font-size:14px; font-weight:bold; text-decoration:none;
+border: none;}
 .itemInfo .itemName {color:#333; font-size:12px; text-decoration:none;}
-.yellowBtn {padding:5px 10px; background:}
+.yellowBtn {padding:5px 10px; border: none;}
+
+.radio-button-list { margin-left: -86px; list-style-type: none; overflow:hidden;}
+      .radio-button-list input {  }
+      .radio-button-list label { cursor: pointer;  }
+      .radio-button-list li { float: left; margin-left: 40px; }
+      
+      input[type=text] {  width: 5.6em; margin: 0 4px;   }
+      #set-donation-challenge ol { margin-left: 10px; padding-left: 0;
+ }
+ .visuallyhidden {
+      position: absolute !important;
+      clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+      clip: rect(1px, 1px, 1px, 1px);
+      }
+	  
+	  #form li { background:#fff; margin-bottom: 40px; list-style-position: inside; -moz-box-shadow: 1px 1px 4px #000; -webkit-box-shadow: 1px 1px 4px #000;   box-shadow: 1px 1px 4px #000;-moz-border-radius: 5px;border-radius: 5px; padding:1em;}
+	   li h2 { display: inline }
+      li li { clear: none }
+      li ol,
+      select {margin: 14px 0 0; }
+
+      select { display: block; }
+
+.give_bointie {
+	float: left;
+	width: 300px;
+	border: 1px #333333 solid;
+	padding: 8px;
+	margin: 8px 0 ;
+}
+
+.give_bointie h3 {
+	margin: 0 0 4px 0;
+}
+
+.give_bointie p {
+	float: left;
+	width: 200px;
+	margin: 0 16px;
+}
+
+.give_columns {
+	float: left;
+	width: 304px;
+	background-color: #ffffff;
+	color: #333333;
+	
+#charity_twitter_profile img {
+	float: left;
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 4px 16px 8px 4px;
+	border: none;
+}
+
+.give_bar_container {
+	
+	width: 150px;
+	padding: 8px;
+	border: 1px solid #cccccc;
+	float: left;
+	
+}
+
+.give_bar_container .bar {
+	height: 40px;
+	background-color: #cccccc;
+}
+	  
 /* @end */
 
