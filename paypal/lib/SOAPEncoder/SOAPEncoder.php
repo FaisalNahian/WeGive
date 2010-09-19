@@ -46,7 +46,7 @@ class SoapEncoder
 			                    XML_SERIALIZER_OPTION_CLASSNAME_AS_TAGNAME => true 
 			                );
 			                
-			$serializer = &new XML_Serializer($options);
+			$serializer = new XML_Serializer($options);
 			
 			$result = $serializer->serialize($requestObject);
 			
@@ -154,7 +154,7 @@ class SoapEncoder
 				
 				$responseXML = $xmlDOM->saveXML();
 									
-				$unserializer = &new XML_Unserializer();
+				$unserializer = new XML_Unserializer();
 				
 				$unserializer->setOption(XML_UNSERIALIZER_OPTION_COMPLEXTYPE, 'object');
 				
