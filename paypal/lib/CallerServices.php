@@ -90,6 +90,7 @@ class CallerServices {
 		}
         catch(FatalException $ex) {throw $ex;} 
 		catch(Exception $ex) {
+		    throw $ex;
 			throw new FatalException('Error occurred in call method: '.$ex->getMessage());
 		}
 	   return $response;

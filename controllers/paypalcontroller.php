@@ -89,9 +89,13 @@ class PaypalController extends Controller
                     '_ap-preapproval&preapprovalkey=' . rawurlencode($challenge->paypal_preapproval_key),
             );
             
+        } else if (!$challenge->paypal_sender_email_address) {
+            $this->get_preapproval_details($challenge);
+            die();
         } else {
             $this->get_donation_payment($challenge);
-                        
+            
+            die();            
             return array(
                 'redirect'=>PAYPAL_REDIRECT_URL . 
                     '_ap-preapproval&preapprovalkey=' . rawurlencode($challenge->paypal_preapproval_key),
@@ -110,9 +114,18 @@ class PaypalController extends Controller
             'redirect'=>$this->abs_path('ok'),
         );
     }
+    
+    function get_preapproval_details(Challenge $challenge)
+    {
+        $request = new PreapprovalDetailsRequest();
+        $request->preapprovalKey = $challenge->paypal_preapproval_key;
+    }
 
     function get_donation_payment(Challenge $challenge)
     {
+        
+        error_reporting(E_ALL & ~E_STRICT);
+        
         $payRequest = new PayRequest();
         $payRequest->actionType = "PAY";
 		$payRequest->cancelUrl = $this->abs_url('cancel');
@@ -132,7 +145,7 @@ class PaypalController extends Controller
        	$payRequest->receiverList = array($receiver);
        	
        	$ap = new AdaptivePayments();
-		$response = $ap->Preapproval($preapprovalRequest);
+		$response = $ap->Pay($payRequest);
 		if(strtoupper($ap->isSuccess) == 'FAILURE')
 		{
 			$FaultMsg = $ap->getLastError();

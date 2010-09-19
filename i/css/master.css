@@ -413,12 +413,14 @@ h5 {
 	background-image: url(../img/home-feature-bg.jpg);
 }
 
-.donate_page #content {
+.donate_page #content,
+.ok_page #content {
 	background-color: #ffffff;
 	color: #333333;
 }
 
-.donate_page #content * {
+.donate_page #content *,
+.ok_page #content * {
 	margin: 8px 0 8px 16px;
 }
 
@@ -501,6 +503,21 @@ border: none;}
 .give_bar_container .bar {
 	height: 40px;
 	background-color: #cccccc;
+}
+
+.donate_bar_container {
+	
+	width: 150px;
+	padding: 8px;
+	float: left;
+	
+}
+
+.donate_bointie {
+	float: left;
+	width: 640px;
+	padding: 8px;
+	margin: 8px 0 ;
 }
 	  
 /* @end */

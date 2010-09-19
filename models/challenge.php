@@ -27,10 +27,5 @@ class Challenge extends Model
     {
         return to_pounds($this->base_donation_pence);
     }
-    
-    public function missionfish_invoice_id()
-    {
-        return "|>".$this->missionfish_id."<| Donation to ".$this->name." via We Give and Mission Fish";
-    }
 }
 

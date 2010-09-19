@@ -1,5 +1,23 @@
+<div id="user_over_view">
+	<div id="twitter_profile">
+		<img src="${charity/image_url}" tal:condition="charity/image_url" alt=""/>
+		<h1 tal:content="charity/name"></h1>
+		<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone.</p>
+	</div>
+	<div id="wegive_profile">
+<h2>Raised<span>£758</span></h2>
+		<h2>Targeted<span>£1000</span></h2>
+	</div>
+</div>
 
-<tal:block metal:use-macro="charity.xhtml/charity"/>
+
+<div class="charity">
+
+    <img src="${charity/image_url}" tal:condition="charity/image_url" alt=""/>
+    <p tal:content="charity/description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+
+<a href="/charity/challenge/${charity/id}">Donate and challenge friends</a>
 
 <h2>People supporting charity:</h2>
 <ul>

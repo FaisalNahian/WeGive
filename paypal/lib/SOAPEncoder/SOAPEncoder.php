@@ -176,7 +176,8 @@ class SoapEncoder
 		}
 		catch(Exception $ex)
 		{
-			throw new Exception("Error occurred while Soap decoding");
+		    throw $ex;
+			throw new Exception("Error occurred while Soap decoding: ".$ex->getMessage());
 		}
 		
 		return $responseXML;

@@ -28,8 +28,8 @@ class AdaptivePayments extends CallerServices {
    		}
    		catch(FatalException $ex) {throw $ex;} 
    		catch(Exception $ex) {
-				  			
-   			throw new FatalException('Error occurred in Pay method');
+				  			throw $ex;
+   			throw new FatalException('Error occurred in Pay method: '.$ex->getMessage());
    		}
    		
    }
@@ -251,7 +251,7 @@ class AdaptivePayments extends CallerServices {
    		} 
    		catch(FatalException $ex) {throw $ex;} 
    		catch(Exception $ex) {
-				  			
+				  	throw $ex;		
    			throw new FatalException('Error occurred in callAPI method: '.$ex->getMessage());
    		}
    		
