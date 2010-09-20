@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 class Model extends ActiveRecord\Model
 {
     public static function db()

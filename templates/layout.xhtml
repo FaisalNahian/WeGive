@@ -39,7 +39,8 @@
 		    <div id="sidebar" tal:condition="not:true:hide_sidebar">
 		        <!-- put sidebar here? -->
 		    </div>    
-        <?php $ctx->content_phptal->echoExecute(); ?>
+        <?php /* that's an ugly unsupported hack, because I was too lazy to add metal:use-macro */
+            $ctx->content_phptal->echoExecute(); ?>
 		</div>
     </div>    
 </body>

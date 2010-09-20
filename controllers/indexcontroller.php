@@ -4,14 +4,16 @@ class IndexController extends Controller
 {
     function index()
     {
-        $users = User::find('all');
-        
         return array(
-            'users'=>$users,
             'hide_sidebar'=>true,
         );
     }
     
+    /**
+     * Name collision caused nomenclature crime.
+     * 
+     * This is method for page that calls actual logout method
+     */
     function log_out()
     {
         $this->logout();
@@ -20,6 +22,9 @@ class IndexController extends Controller
         );
     }
     
+    /**
+     * 404 page
+     */
     function not_found($e = NULL)
     {
         return array(
@@ -28,6 +33,9 @@ class IndexController extends Controller
         );
     }
     
+    /**
+     * Site-wide last-resort exception handler
+     */
     function internal_error($e = NULL)
     {
         if ($e instanceof EpiTwitterNotAuthorizedException || 

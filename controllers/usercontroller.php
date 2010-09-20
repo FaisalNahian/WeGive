@@ -2,6 +2,9 @@
 
 class UserController extends Controller
 {
+    /**
+     * Profile page
+     */
     function show($id)
     {
         $user = User::find_by_id($id);

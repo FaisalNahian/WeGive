@@ -2,6 +2,9 @@
 
 class TwitterController extends Controller
 {
+    /**
+     * Redirects to Twitter
+     */
     function login()
     {
         $t = new Twitter();
@@ -10,6 +13,9 @@ class TwitterController extends Controller
         );
     }
     
+    /**
+     * Good news from Twitter
+     */
     function callback()
     {
         if (!isset($_GET['oauth_token'])) throw new Exception();
@@ -21,6 +27,9 @@ class TwitterController extends Controller
         return $this->login_with_oauth($token->oauth_token, $token->oauth_token_secret);              
     }
     
+    /**
+     * Figure out identity of the Twitterrer and log them in
+     */
     protected function login_with_oauth($token,$secret)
     {
         $twitter = new Twitter();
@@ -37,20 +46,10 @@ class TwitterController extends Controller
         
         $this->login_user($user);     
         
-//        return $this->return_to();
+//        return $this->return_to();  // since return_to saves any stupid URL, this causes redirect loops
         
         return array(
             'redirect'=>'/',
         );
-    }
-        
-    
-    function test()
-    {
-        $user = $this->logged_in_user();
-        
-        $f = User::find_by_id(12);
-        
-        $user->add_follower($f);
     }
 }

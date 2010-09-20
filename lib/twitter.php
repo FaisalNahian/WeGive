@@ -4,6 +4,9 @@ require_once APPLICATION_PATH.'twitter/EpiCurl.php';
 require_once APPLICATION_PATH.'twitter/EpiOAuth.php';
 require_once APPLICATION_PATH.'twitter/EpiTwitter.php';
 
+/**
+ * OAuth API wrapper of a wrapper of a wrapper.
+ */
 class Twitter extends EpiTwitter
 {
     const CONSUMER_KEY = 'H1xFwXIVtUC6WI6S4WrQrg';
@@ -14,6 +17,9 @@ class Twitter extends EpiTwitter
         return parent::__construct(self::CONSUMER_KEY, self::CONSUMER_SECRET);
     }
     
+    /**
+     * Reads object from Twitter API and loads/creates User for it.
+     */
     public function user_from_response($creds)
     {
         $user = User::find_by_twitter_id($creds->id);
@@ -24,13 +30,17 @@ class Twitter extends EpiTwitter
         $user->twitter_id = $creds->id;
         $user->screen_name = $creds->screen_name;
         $user->profile_image_url = $creds->profile_image_url;
-        //$user->description = $creds->;
+        //$user->description = $creds->bio;
         
         return $user;
     }
     
-    
-    // FIXME: this method needs to remove users who stopped following
+    /**
+     * Read followers of the given user from the API
+     * 
+     * @todo needs to remove users who stopped following     
+     * @todo needs to support cursor
+     */
     public function get_followers(User $user)
     {       
         $batch_size = 5;
@@ -51,6 +61,9 @@ class Twitter extends EpiTwitter
         }
     }
     
+    /**
+     * Reads info (screen_name, etc.) for given IDs, creates users and adds them as followers
+     */
     protected function lookup_followers(User $user, array $ids)
     {
         $info = $this->get('/users/lookup.json', array('user_id'=>implode(',',$ids)));

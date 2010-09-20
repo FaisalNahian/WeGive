@@ -1,7 +1,14 @@
 <?php
 
+/**
+ * I don't like spamming every anonymous user with pointless PHPSESSID cookie
+ * and I don't like session_start sprinkled all over the place.
+ */
 class Session
 {
+    /**
+     * @todo start session lazily
+     */
     function __construct()
     {
         session_start();

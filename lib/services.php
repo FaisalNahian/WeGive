@@ -2,12 +2,16 @@
 
 require_once APPLICATION_PATH.'php-activerecord/ActiveRecord.php';
 
+/**
+ * DB, sessions and all that stuff that needs to be mocked in tests
+ */
 class Services
 {
     protected $session;
     
     function __construct()
-    {                
+    {
+        // This closure is the winner in "because we can" category.
         ActiveRecord\Config::initialize(function($cfg) {
             $conn = array(
                 'development' => Services::ARURL,

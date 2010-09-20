@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Turns out ActiveRecord is impenetrable, so this is not used. Shame.
+ */
 class MyPDO extends PDO
 {
     function q(/*varargs */)

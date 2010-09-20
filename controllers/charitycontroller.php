@@ -2,6 +2,9 @@
 
 class CharityController extends Controller
 {
+    /**
+     * Quick hack. Shouldn't be here.
+     */
     function add()
     {
         if (!empty($_POST['name'])) {
@@ -19,6 +22,9 @@ class CharityController extends Controller
         );
     }
     
+    /**
+     * Page that starts a new challenge for given charity.
+     */
     function challenge($charity_id=0) {
         $user = $this->logged_in_user();
         
@@ -30,6 +36,9 @@ class CharityController extends Controller
         );
     }
     
+    /**
+     * Page that allows any user (usually an invited friend) to donate to given challenge.
+     */
     function donate($challenge_id) {
         $challenge = Challenge::find_by_id($challenge_id);
         if (!$challenge) throw new PageNotFoundException();
@@ -41,6 +50,9 @@ class CharityController extends Controller
         );
     }
     
+    /**
+     * Charity profile page.
+     */
     function show($id)
     {
         $c = Charity::find_by_id($id);
@@ -51,6 +63,11 @@ class CharityController extends Controller
         );
     }
     
+    /**
+     * List of charities.
+     * 
+     * @todo search and browsing by category
+     */
     function listing()
     {
         return array(

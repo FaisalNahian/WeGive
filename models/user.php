@@ -8,6 +8,9 @@ class User extends Model
         array('followers', 'class_name'=>'User',  'through'=>'follows'),
     );
     
+    /**
+     * Twitter API instance loaded with token/secret for this user.
+     */
     function twitter()
     {   
         if (!$this->twitter_oauth_token) return NULL;
@@ -18,6 +21,9 @@ class User extends Model
         return $twitter;
     }
     
+    /**
+     * @todo rewrite as proper SQL (or many-to-many once it works)
+     */
     function add_follower(User $follower)
     {
         $f = Follow::find_by_user_id_and_follower_id($this->id,$follower->id);
@@ -39,6 +45,9 @@ class User extends Model
         return $this->id%23==1 || $this->twitter_oauth_token;
     }
     
+    /**
+     * Users who haven't logged in to the site don't have followers known
+     */
     public function followers_available()
     {
         return !!$this->twitter_oauth_token; 

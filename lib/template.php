@@ -3,6 +3,11 @@
 require_once "phptal/PHPTAL.php";
 require_once "phptal/PHPTAL/FileSourceResolver.php";
 
+/**
+ * Loads PHP or PHPTAL template for a result
+ * 
+ * @todo too much static
+ */
 class Template
 {
     private static function outputHTTP(array $result)
@@ -14,6 +19,16 @@ class Template
         }
     }
     
+    /**
+     * Echoes page for the result. Looks for templates/*_*.{php,xhtml}
+     * 
+     * @param array $result has magic values:
+     *  * template
+     *  * controller_name
+     *  * redirect
+     * 
+     * The rest is interpreted as variables in template.
+     */
     public static function output(array $result)
     {
         self::outputHTTP($result);
@@ -33,6 +48,9 @@ class Template
         else throw new Exception("No template $base_path");
     }
     
+    /**
+     * uses PHP file as template
+     */
     private static function outputPHP(array $_result, $_path)
     {        
         extract($_result, EXTR_SKIP);
@@ -40,13 +58,15 @@ class Template
         require_once $_path;        
     }
     
-    
+    /**
+     * Executes PHPTAL template and wraps its result in layout.xhtml
+     */
     private static function outputTAL(array $result, $path)
     {
         $phptal = new PHPTAL();
         foreach($result as $k => $v) $phptal->set($k,$v);
         
-        $layout = clone $phptal;
+        $layout = clone $phptal; // lazy hack
         $layout->setTemplate('templates/layout.xhtml');
         $phptal->setTemplate($path);
         $layout->content_phptal = $phptal;

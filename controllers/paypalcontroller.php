@@ -4,8 +4,6 @@ require_once "Log.php";
 require_once "Log/file.php";
 require_once "AdaptivePayments.php";
 
-// app id 
-
 // test buyer: buyer_1284871282_per@geekhood.net
 // pass: buyerbuyer
 
@@ -20,16 +18,26 @@ define('PAYPAL_REDIRECT_URL', 'https://www.sandbox.paypal.com/webscr&cmd=');
 
 class PaypalController extends Controller
 {
+    /**
+     * This is recipient's e-mail address used to send PayPal donations via MissionFish
+     */
     const MISSION_FISH_EMAIL = 'polfning@aol.com'; // FIXME: configurable
     
+    /**
+     * (Sandbox) AdaptivePayments app ID
+     */
     const APP_ID = 'APP-80W284485P519543T'; // FIXME: configurable
     const CURRENCY = "GBP";
     
+    /**
+     * Creates new challenge for given charity and redirects user to payment
+     * 
+     * @todo read & validate form values
+     */
     function new_challenge($charity_id)
     {
         $charity = Charity::find_by_id($charity_id);
         if (!$charity) throw new PageNotFoundException();
-        
 
         // FIXME: check for duplicates
         $challenge = new Challenge();
@@ -58,6 +66,9 @@ class PaypalController extends Controller
         
     }
     
+    /**
+     * builds ClientDetailsType object for various PayPal APIs
+     */
     protected function clientDetails()
     {
         $clientDetails = new ClientDetailsType();
@@ -68,6 +79,9 @@ class PaypalController extends Controller
 		return $clientDetails;
     }
     
+    /**
+     * Send user to appropriate PayPal URL to complete preapproval/first payment process
+     */
     function prepay_challenge($challenge_id)
     {
         $challenge = Challenge::find_by_id($challenge_id);
@@ -76,6 +90,12 @@ class PaypalController extends Controller
         return $this->do_prepay_challenge($challenge);
     }
     
+    /**
+     * 1. Gets preapproval key and redirects to PayPal
+     * 2. If 1 is done, gets sender's e-mail
+     * 3. If 2 worked, gets first payment
+     * 4. If 3 worked, celebrate!
+     */
     function do_prepay_challenge(Challenge $challenge)
     {
         // FIXME: check status of preapprovalKey (might be denied etc)
@@ -103,24 +123,38 @@ class PaypalController extends Controller
         }
     }    
 
+    /**
+     * Return PayPal-API friendly formatted GBP amount from pence
+     * 
+     * @todo no floats!
+     */
     private function amountFromPence($pence)
     {
-        return round($pence/100,2);
+        return round($pence/100,2); // this is exactly what shouldn't be done.
     }
     
+    /**
+     * Send user to PayPal express checkout to donate to existing challenge
+     */
     function donate_challenge($challenge_id)
     {
         return array(
-            'redirect'=>$this->abs_path('ok'),
+            'redirect'=>$this->abs_path('ok'), // That was quick! ;)
         );
     }
     
+    /**
+     * @see do_prepay_challenge
+     */
     function get_preapproval_details(Challenge $challenge)
     {
         $request = new PreapprovalDetailsRequest();
         $request->preapprovalKey = $challenge->paypal_preapproval_key;
     }
 
+    /**
+     * Takes initial donation via MissionFish from preapproved payment
+     */
     function get_donation_payment(Challenge $challenge)
     {
         
@@ -163,9 +197,12 @@ class PaypalController extends Controller
 		
     }
     
+    /**
+     * Gets PayPal preapproval needed for the challenge
+     */
     function get_preapproval_key(Challenge $challenge)
     {   
-        $amount = "50.00";
+        $amount = "50.00"; // FIXME: calculate maximum amount that challenger may need to pay out (donation + challenge)
         
         error_reporting(E_ALL & ~E_STRICT);
         
@@ -186,7 +223,6 @@ class PaypalController extends Controller
 		$preapprovalRequest->maxTotalAmountOfAllPayments = $amount;
 		$preapprovalRequest->requestEnvelope = new RequestEnvelope();
 		$preapprovalRequest->requestEnvelope->errorLanguage = "en_US";//default it is en_US, which is the only language currently supported
-
 
 		$ap = new AdaptivePayments();
 		$response = $ap->Preapproval($preapprovalRequest);
